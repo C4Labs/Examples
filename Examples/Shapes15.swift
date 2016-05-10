@@ -10,56 +10,29 @@ import UIKit
 import C4
 
 class Shapes15: CanvasController {
-
-    var line:Line!
-    var patternWidth = Double()
-    
     override func setup() {
+        //create the line and center it
+        let points = (Point(0, canvas.center.y), Point(canvas.width, canvas.center.y))
+        let line = Line(points)
+        line.lineWidth = 100.0
+        canvas.add(line)
 
-    //create the end points for a line
-    let endPoints = [Point(), Point(self.canvas.width, 0)]
-    
-    //create the line and center it
-    line = Line(endPoints)
-    line.center.y = self.canvas.center.y
-    
-    //create a dash pattern
-    //this pattern is [1,1,2,2,3,3,..,768,768];
-
-
-
-        var dashPattern = [CGFloat]()
-        for i in 0..<768 {
-            dashPattern.append(CGFloat(i)+1.0)
-            dashPattern.append(CGFloat(i)+1.0)
-            patternWidth += Double(2*i)
-
+        //create a dash pattern
+        var dashPattern = [Double]()
+        for i in Int(line.lineWidth)..<Int(canvas.width + line.lineWidth) {
+            dashPattern.append(Double(i))
+            dashPattern.append(dashPattern.last!)
         }
-    
-    //thicken the line and set its dash pattern
-    line.lineWidth = 10.0
-    line.lineDashPattern = dashPattern
-    
-    //add the line to the canvas
-        self.canvas.add(line)
-    //animate it after a short wait
+        line.lineDashPattern = dashPattern
 
-        let anim = ViewAnimation(duration:300.0) {    //duration = 5 minutes (60s * 5 = 300);
-
-            self.line.strokeColor = C4Blue
+        let a = ViewAnimation(duration:30.0) {    //duration = 5 minutes (60s * 5 = 300);
+            line.strokeColor = C4Pink
             //set the final dash phase to the entire width of the pattern
-            self.line.lineDashPhase = self.patternWidth
+            line.lineDashPhase = dashPattern.reduce(0, combine: +)
         }
 
-
-        anim.autoreverses = true
-
-
-        wait(0.1){
-            anim.animate()
-        }
+        a.autoreverses = true
+        a.repeats = true
+        a.animate()
     }
-    
-
-
 }

@@ -10,86 +10,40 @@ import UIKit
 import C4
 
 class Shapes17: CanvasController {
-    
-    var rect: Rectangle!
-    var star: Star!
-    var patternWidth = 0.0
-    
+
     override func setup() {
         //create the square and center it
-        let f = Rect(0,0,250,250)
-        rect = Rectangle(frame: f)
-        rect.corner = Size(10,10)
-        rect.center = self.canvas.center
+        var f = Rect(0, 0, 250, 250)
+        f.center = canvas.center
 
-
-        patternWidth = 4*rect.width
-        var dashPattern = [5,20]
-
-
-        //thicken the line and set its dash pattern
+        let rect = Rectangle(frame: f)
         rect.lineWidth = 10.0
-        rect.fillColor = Color(UIColor.clearColor())
+        rect.fillColor = clear
         rect.lineCap = .Round
-        rect.lineDashPattern = dashPattern
-        //add the line to the canvas
+        rect.lineDashPattern = [5, 20]
         canvas.add(rect)
 
-
-        //change the dash pattern
-        dashPattern[0] = 1
-        dashPattern[1] = 10
-
-
-        //create a font for the text shape
-        //    f = [Font fontWithName:@"ArialRoundedMTBold" size:320];
-
-
-        //create the text shape and center it
-
-
-        star = Star(
-            center: canvas.center,
-            pointCount: 5,
-            innerRadius: 50,
-            outerRadius: 100)
-
-
-
-
+        let star = Star(center: canvas.center, pointCount: 5, innerRadius: 50, outerRadius: 100)
         //style the text shape and set its dash pattern
-        star.fillColor = Color(UIColor.clearColor())
+        star.fillColor = clear
         star.lineWidth = 5.0
-        star.lineCap = .Round
-        star.lineDashPattern = dashPattern
+        star.lineDashPattern = [1, 10]
+
         //add the text shape to the canvas
         canvas.add(star)
 
-
         //animate it after a short wait
         let anim = ViewAnimation(duration:10.0) {    //duration = 3 minutes (60s * 3 = 180);
-    
-
-            self.rect.strokeColor = C4Blue
-            self.star.strokeColor = C4Grey
-    
+            rect.strokeColor = C4Pink
+            star.strokeColor = C4Grey
 
             //set the final dash phase to the entire width of the pattern
-            self.rect.lineDashPhase = self.patternWidth
-            self.star.lineDashPhase = self.patternWidth
-    
-
+            rect.lineDashPhase = self.canvas.width
+            star.lineDashPhase = self.canvas.width
         }
-
-
+        
         anim.autoreverses = true
         anim.repeats = true
-
-
-        wait(0.1){
-            anim.animate()
-        }
-
-
+        anim.animate()
     }
 }

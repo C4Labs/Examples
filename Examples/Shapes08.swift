@@ -9,24 +9,15 @@
 import C4
 
 class Shapes08: CanvasController {
-    
-    var circle:Circle!
-    
     override func setup() {
-
-
-
-
-        //create and position the shape with default colors
-        circle = Circle(center: self.canvas.center, radius: 50)
-
+        //create a circle
+        let circle = Circle(center: self.canvas.center, radius: 100)
 
         //change the line width
         circle.lineWidth = 10
 
-
-        //add the shapes to the canvas
-        self.canvas.add(circle)
+        //add it to the canvas
+        canvas.add(circle)
     }
 }
 
