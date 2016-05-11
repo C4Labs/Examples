@@ -9,90 +9,66 @@
 import C4
 
 class AudioPlayer09: CanvasController {
-    var s:AudioPlayer!
+    let audioPlayer = AudioPlayer("C4Loop.aif")!
     var meterUpdateTimer:NSTimer!
-    var peakLeft:Line!
-    var peakRight:Line!
-    var avgLeft:Line!
-    var avgRight:Line!
-    
-    
+    var avgL, avgR, peakL, peakR: Line!
+
     override func setup() {
-        s = AudioPlayer("C4Loop.aif")
-        s.play()
-        s.loops = true
-        s.meteringEnabled = true
+        audioPlayer.play()
+        audioPlayer.loops = true
+        audioPlayer.meteringEnabled = true
+        audioPlayer.play()
 
+        let dx = Vector(x: canvas.width/4.0, y: 0)
 
+        var points = (Point(0, canvas.height), Point())
+        points.0 += dx/2.0
+        points.1 += dx/2.0
 
+        avgL = Line(points)
+        avgL.lineCap = .Butt
+        avgL.lineWidth = dx.x
+        avgL.strokeColor = C4Pink
+        points.0 += dx
+        points.1 += dx
 
-//        self.canvas.addTapGestureRecognizer { (location, state) -> () in
-//    
+        avgR = Line(points)
+        avgR.lineCap = .Butt
+        avgR.lineWidth = dx.x
+        avgR.strokeColor = C4Pink
+        points.0 += dx
+        points.1 += dx
 
-//            //playing returns true if the receiver's current playback rate > 0. Otherwise returns false.
-//            if self.s.playing == false{
-//                self.s.play()
-//                print("playing")
-//            } else {
-//                self.s.stop()
-//                print("stopped")
-//            }
-//    
+        peakL = Line(points)
+        peakL.lineCap = .Butt
+        peakL.lineWidth = dx.x
+        points.0 += dx
+        points.1 += dx
 
-//        }
+        peakR = Line(points)
+        peakR.lineCap = .Butt
+        peakR.lineWidth = dx.x
+        points.0 += dx
+        points.1 += dx
 
+        canvas.add(avgL)
+        canvas.add(avgR)
+        canvas.add(peakL)
+        canvas.add(peakR)
 
-        var pts = [
-            Point(self.canvas.width / 2, self.canvas.center.y + 100),
-            Point(self.canvas.width / 2, self.canvas.center.y - 100)
-        ]
-        pts[0].x -= 100
-        pts[1].x -= 100
-        avgLeft = Line(pts)
-        pts[0].x += 75
-        pts[1].x += 75
-        avgRight = Line(pts)
-        pts[0].x += 75
-        pts[1].x += 75
-        peakLeft = Line(pts)
-        pts[0].x += 75
-        pts[1].x += 75
-        peakRight = Line(pts)
-        avgLeft.strokeColor = C4Pink
-        avgRight.strokeColor = C4Pink
-        canvas.add(avgLeft)
-        canvas.add(avgRight)
-        canvas.add(peakLeft)
-        canvas.add(peakRight)
-        meterUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1/30.0, target: self, selector: "updateMeters", userInfo: nil, repeats: true)
-        meterUpdateTimer.fire()
-
-
+        let t = Timer(interval: 1/30.0) {
+            self.updateMeters()
+        }
+        t.start()
     }
     
     func updateMeters() {
-        s.updateMeters()
-
-
-        var sav =  s.averagePower(0)
-        var l = pow(10, 0.05 * sav)
-        avgLeft.strokeEnd = l
-
-
-        sav =  s.averagePower(1)
-        l = pow(10, 0.05 * sav)
-        avgRight.strokeEnd = l
-
-
-        var sp =  s.peakPower(0)
-        l = pow(10, 0.05 * sp)
-        peakLeft.strokeEnd = l
-
-
-        sp = s.peakPower(1)
-        l = pow(10, 0.05 * sp)
-        peakRight.strokeEnd = l
-
-
+        ShapeLayer.disableActions = true
+        audioPlayer.updateMeters()
+        avgL.strokeEnd = pow(10, 0.05 * audioPlayer.averagePower(0))
+        avgR.strokeEnd = pow(10, 0.05 * audioPlayer.averagePower(1))
+        peakL.strokeEnd = pow(10, 0.05 * audioPlayer.peakPower(0))
+        peakR.strokeEnd = pow(10, 0.05 * audioPlayer.peakPower(1))
+        ShapeLayer.disableActions = false
     }
 }

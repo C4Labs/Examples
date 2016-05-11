@@ -11,41 +11,22 @@ import C4
 import UIKit
 
 class Images07: CanvasController {
-    
-    
     override func setup() {
-
-
-
-
-        //define dimensions for the image size
-        let width = 320
-        let height = 240
-
-
         //we create an array for our color data
         var rawData = [Pixel]()
 
-
+        let colors = [C4Pink, C4Blue, C4Purple, C4Grey]
         //for every row
-        for _ in 0..<height {
-
-
-
-
+        for _ in 0..<Int(canvas.height) {
             //color each pixel in that row
-            for _ in 0..<width {
-                //random colored pixels
-                rawData.append(Pixel(random(below: 255), random(below: 255), random(below: 255), 255))
-
+            for _ in 0..<Int(canvas.width) {
+                //create a pixel from a random color in our set
+//                rawData.append(Pixel(colors[random(below: 4)]))
             }
         }
 
-
-        let img = Image(pixels: rawData, size: Size(width, height))
+        let img = Image(pixels: rawData, size: canvas.size)
         img.center = canvas.center
         canvas.add(img)
-
-
     }
 }

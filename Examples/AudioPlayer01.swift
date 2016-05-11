@@ -9,18 +9,10 @@
 import C4
 
 class AudioPlayer01: CanvasController {
-    
-    var audioPlayer:AudioPlayer!
+    let audioPlayer = AudioPlayer("C4Loop.aif")!
     
     override func setup() {
-
-
-        audioPlayer = AudioPlayer("C4Loop.aif")
-
-
-        self.canvas.addTapGestureRecognizer { (center, location, state) -> () in
-            self.audioPlayer.play()
-//            print("in tap")
-        }
+        audioPlayer.loops = true
+        audioPlayer.play()
     }
 }

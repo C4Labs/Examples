@@ -10,30 +10,20 @@ import C4
 
 class Fonts02: CanvasController {
     override func setup() {
+        let dy = Vector(x: 0, y: canvas.height/4)
         //create a regular system font
-        var font = Font.systemFont(30.0)
-        var label = TextShape(text: "Regular System Font", font: font)!
-        label.center = Point(self.canvas.center.x, self.canvas.height / 4.0)
-
-
-        self.canvas.add(label)
-
+        var label = TextShape(text: "Regular System Font", font: Font.systemFont(30.0))!
+        label.center = canvas.center - dy
+        canvas.add(label)
 
         //create a bold system font
-        font = Font.boldSystemFont(30.0)
-        label = TextShape(text: "Bold System Font", font: font)!
-        label.center = Point(self.canvas.center.x, self.canvas.height * 2.0 / 4.0)
-
-
-        self.canvas.add(label)
-
+        label = TextShape(text: "Bold System Font", font: Font.boldSystemFont(30.0))!
+        label.center = canvas.center
+        canvas.add(label)
 
         //create a italic system font
-        font = Font.italicSystemFont(30.0)
-        label = TextShape(text: "Italic System Font", font: font)!
-        label.center = Point(self.canvas.center.x, self.canvas.height * 3.0 / 4.0)
-
-
-        self.canvas.add(label)
+        label = TextShape(text: "Italic System Font", font: Font.italicSystemFont(30.0))!
+        label.center = canvas.center + dy
+        canvas.add(label)
     }
 }

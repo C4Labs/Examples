@@ -13,7 +13,6 @@ class Fonts04: CanvasController {
         //will print to the console ALL the family names of availble fonts
         let familyNames = Font.familyNames()
 
-
         for strings in familyNames {
             print(strings)
         }

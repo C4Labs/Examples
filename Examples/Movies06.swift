@@ -9,26 +9,24 @@
 import C4
 
 class Movies06: CanvasController {
-    
-    
-    var movie:Movie!
-    
     override func setup() {
-        //create a movie and play it automatically
-        let movie = Movie("halo.mp4")!
-//        movie.reachedEnd {
-//            let s = Ellipse(frame: movie.frame)
-//            movie.layer?.mask = s.layer
-//            let a = ViewAnimation(duration: 2) {
-//                s.transform.rotate(M_PI)
-//            }
-//            a.repeats = true
-//            a.animate()
-//        }
-        movie.frame = Rect(0, 0, self.canvas.frame.max.x,self.canvas.frame.max.y)
-        movie.loops = false
-        movie.play()
-        self.canvas.add(movie)
-    }
+        let color = Movie("halo.mp4")!
+        let gray = Movie("haloGray.mp4")!
 
+        color.frame = canvas.frame
+        color.play()
+
+        gray.frame = canvas.frame
+        gray.muted = true
+        gray.play()
+
+        let g = Gradient(frame: gray.bounds)
+        g.colors = [clear, white]
+        g.locations = [0, 0.5]
+        g.endPoint = Point(1,1)
+        gray.mask = g
+
+        canvas.add(color)
+        canvas.add(gray)
+    }
 }

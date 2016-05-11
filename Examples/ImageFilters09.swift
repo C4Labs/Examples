@@ -10,15 +10,13 @@ import C4
 
 class ImageFilters09: CanvasController {
     override func setup() {
-
-
-        let image = Image("chop")!
-        var filter = Sharpen()
-        filter.sharpness = 5
-        image.apply(filter)
-        image.center = canvas.center
+        let image = Image("rockies")!
+        image.constrainsProportions = true
+        image.width = canvas.width
         canvas.add(image)
 
-
+        var filter = Sharpen()
+        filter.sharpness = 15
+        image.apply(filter)
     }
 }

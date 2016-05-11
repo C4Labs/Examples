@@ -11,7 +11,7 @@ import C4
 
 class ViewController: CanvasController {
     override func setup() {
-        let example = Views22()
+        let example = AudioPlayer09()
         self.addChildViewController(example)
         canvas.add(example.canvas)
     }

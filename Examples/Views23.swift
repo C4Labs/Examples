@@ -10,56 +10,30 @@ import C4
 import UIKit
 
 class Views23: CanvasController {
-    
-    var s1:Circle!
-    var s2:Circle!
-    var s3:Circle!
-    
-    
-    
     override func setup() {
+        let dx = Vector(x: canvas.width/4, y: 0)
 
+        let c1 = Circle(center: canvas.center - dx, radius: 66)
+        let c2 = Circle(center: canvas.center, radius: 66)
+        let c3 = Circle(center: canvas.center + dx, radius: 66)
 
-        setupShapes()
+        c1.shadow.opacity = 0.8
+        c2.shadow.opacity = 0.8
+        c3.shadow.opacity = 0.8
 
+        c1.shadow.offset = Size(10,10)
+        c2.shadow.offset = Size(16,20)
+        c3.shadow.offset = Size(22,28)
 
-        s1.shadow.color = C4Pink
-        s2.shadow.color = C4Blue
-        s3.shadow.color = Color(UIColor.darkGrayColor())
-    }
-    
-    func setupShapes() {
+        c1.shadow.radius = 3.0
+        c2.shadow.radius = 6.0
+        c3.shadow.radius = 9.0
 
+        c2.shadow.color = C4Pink
+        c3.shadow.color = C4Blue
 
-        var currentCenter = self.canvas.center
-
-
-        s1 = Circle(center: currentCenter, radius: 44)
-        s2 = Circle(center: currentCenter, radius: 44)
-        s3 = Circle(center: currentCenter, radius: 44)
-
-
-        currentCenter.x -= 100
-        s1.center = currentCenter
-        self.canvas.add(s1)
-        s1.shadow.offset = Size(30, 50)
-
-
-        currentCenter.x += 100
-        s2.center = currentCenter
-        self.canvas.add(s2)
-        s2.shadow.offset = Size(30, 50)
-
-
-        currentCenter.x += 100
-        s3.center = currentCenter
-        self.canvas.add(s3)
-        s3.shadow.offset = Size(30, 50)
-
-        s1.shadow.opacity = 0.8
-        s2.shadow.opacity = 0.8
-        s3.shadow.opacity = 0.8
-
-
+        canvas.add(c1)
+        canvas.add(c2)
+        canvas.add(c3)
     }
 }

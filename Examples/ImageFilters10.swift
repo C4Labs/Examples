@@ -10,17 +10,15 @@ import C4
 
 class ImageFilters10: CanvasController {
     override func setup() {
-
-
         let image = Image("chop")!
-        var filter = Twirl()
-        filter.angle = 50
-        filter.center = canvas.center
-        filter.radius = 100
-        image.apply(filter)
-        image.center = canvas.center
+        image.constrainsProportions = true
+        image.width = canvas.width
         canvas.add(image)
 
-
+        var filter = Twirl()
+        filter.center = canvas.center
+        filter.angle = 2*M_PI
+        filter.radius = 200
+        image.apply(filter)
     }
 }

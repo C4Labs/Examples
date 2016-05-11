@@ -9,34 +9,10 @@
 import C4
 
 class AudioPlayer04: CanvasController {
-    
-    var audioPlayer:AudioPlayer!
-    
+    let audioPlayer = AudioPlayer("C4Loop.aif")!
     override func setup() {
-
-
-        audioPlayer = AudioPlayer("C4Loop.aif")
         audioPlayer.enableRate = true
-        audioPlayer.rate = 1
-
-
-        self.canvas.addTapGestureRecognizer { (center, location, state) -> () in
-    
-
-            //playing returns true if the receiver's current playback rate > 0. Otherwise returns false.
-            if self.audioPlayer.playing == false{
-                self.audioPlayer.play()
-                print("playing")
-        
-
-                self.canvas.backgroundColor = C4Pink
-            } else {
-                self.audioPlayer.stop()
-                self.canvas.backgroundColor = C4Blue
-                print("stopped")
-            }
-    
-
-        }
+        audioPlayer.rate = 0.25
+        audioPlayer.play()
     }
 }

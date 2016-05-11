@@ -11,7 +11,8 @@ import C4
 class Images01 : CanvasController {
     override func setup() {
         let img = Image("chop")!
-        img.center = canvas.center;
+        img.constrainsProportions = true
+        img.width = canvas.width
         canvas.add(img)
     }
 }

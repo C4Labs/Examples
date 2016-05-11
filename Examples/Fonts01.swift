@@ -11,20 +11,16 @@ import C4
 class Fonts01: CanvasController {
     override func setup() {
         //create an initial font and a label
-        let font = Font(name: "helvetica", size: 40.0)!
-        let label = TextShape(text: "initial font", font: font)!
-        label.center = Point(self.canvas.center.x, self.canvas.height / 3.0)
-
+        let label = TextShape(text: "Default Font")!
+        label.center = Point(canvas.center.x, canvas.height/3)
 
         //use the initial font to create a new font with a bigger size
-        let fontLarge = font.font(80.0)
-        let labelLarge = TextShape(text: "Large font", font: fontLarge)!
-        labelLarge.center = Point(self.canvas.center.x, self.canvas.height * 2.0 / 3.0);
-
+        let f = Font(name: "helvetica", size: 30.0)!
+        let smallLabel = TextShape(text: "Small Font", font: f)!
+        smallLabel.center = Point(canvas.center.x, canvas.height*2/3);
 
         //add the labels to the canvas
         self.canvas.add(label)
-        self.canvas.add(labelLarge)
-
+        self.canvas.add(smallLabel)
     }
 }

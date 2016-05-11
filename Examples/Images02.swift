@@ -10,24 +10,27 @@ import C4
 
 class Images02 : CanvasController {
     override func setup() {
-        let normal = Image("chop")!
-        normal.opacity = 0.75
+        let normal = Image("rockies")!
         normal.center = canvas.center
 
         let tall = Image(c4image: normal)
         tall.height = canvas.height
-        tall.opacity = 0.75
         tall.center = canvas.center
 
         let wide = Image(c4image: normal)
         wide.width = canvas.width
-        wide.opacity = 0.75
         wide.center = canvas.center
 
         let full = Image(c4image: normal)
         full.frame = canvas.frame
-        normal.opacity = 0.75
         self.canvas.add(full)
+
+        let images = [normal, tall, wide, full]
+        for img in images {
+            img.opacity = 0.66
+            img.border.color = white
+            img.border.width = 0.5
+        }
 
         canvas.add(full)
         canvas.add(tall)
