@@ -10,14 +10,11 @@ import C4
 
 class Views10: CanvasController {
     override func setup() {
-        let f = Rect(0,0,100,100)
-        let r = Rectangle(frame: f)
-        r.center = canvas.center
-        canvas.add(r)
-
-
-        canvas.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            r.center = location
+        let c = Circle(center: canvas.center, radius: 100)
+        canvas.add(c)
+        
+        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            c.center = center
         }
     }
 }

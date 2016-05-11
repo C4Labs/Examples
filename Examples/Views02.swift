@@ -9,14 +9,9 @@
 import C4
 
 class Views02: CanvasController {
-    
-    var s1:Circle!
-
-    
     override func setup() {
-        s1 = Circle(center: self.canvas.center, radius: 44)
-        s1.backgroundColor = C4Pink
-        self.canvas.add(s1)
+        let c = Circle(center: self.canvas.center, radius: 150)
+        c.backgroundColor = C4Pink
+        canvas.add(c)
     }
-    
 }

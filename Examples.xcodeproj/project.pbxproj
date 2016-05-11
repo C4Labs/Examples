@@ -54,8 +54,6 @@
 		1F4D29AF1CE266A700C02C6E /* ImageFilters10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D291E1CE266A700C02C6E /* ImageFilters10.swift */; };
 		1F4D29B01CE266A700C02C6E /* Images01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D291F1CE266A700C02C6E /* Images01.swift */; };
 		1F4D29B11CE266A700C02C6E /* Images02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29201CE266A700C02C6E /* Images02.swift */; };
-		1F4D29B21CE266A700C02C6E /* Images03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29211CE266A700C02C6E /* Images03.swift */; };
-		1F4D29B31CE266A700C02C6E /* Images04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29221CE266A700C02C6E /* Images04.swift */; };
 		1F4D29B41CE266A700C02C6E /* Images05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29231CE266A700C02C6E /* Images05.swift */; };
 		1F4D29B51CE266A700C02C6E /* Images06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29241CE266A700C02C6E /* Images06.swift */; };
 		1F4D29B61CE266A700C02C6E /* Images07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29251CE266A700C02C6E /* Images07.swift */; };
@@ -134,9 +132,6 @@
 		1F4D29FF1CE266A700C02C6E /* Views03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D296E1CE266A700C02C6E /* Views03.swift */; };
 		1F4D2A001CE266A700C02C6E /* Views04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D296F1CE266A700C02C6E /* Views04.swift */; };
 		1F4D2A011CE266A700C02C6E /* Views05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29701CE266A700C02C6E /* Views05.swift */; };
-		1F4D2A021CE266A700C02C6E /* Views06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29711CE266A700C02C6E /* Views06.swift */; };
-		1F4D2A031CE266A700C02C6E /* Views07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29721CE266A700C02C6E /* Views07.swift */; };
-		1F4D2A041CE266A700C02C6E /* Views08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29731CE266A700C02C6E /* Views08.swift */; };
 		1F4D2A051CE266A700C02C6E /* Views09.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29741CE266A700C02C6E /* Views09.swift */; };
 		1F4D2A061CE266A700C02C6E /* Views10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29751CE266A700C02C6E /* Views10.swift */; };
 		1F4D2A071CE266A700C02C6E /* Views11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29761CE266A700C02C6E /* Views11.swift */; };
@@ -257,8 +252,6 @@
 		1F4D291E1CE266A700C02C6E /* ImageFilters10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilters10.swift; sourceTree = "<group>"; };
 		1F4D291F1CE266A700C02C6E /* Images01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images01.swift; sourceTree = "<group>"; };
 		1F4D29201CE266A700C02C6E /* Images02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images02.swift; sourceTree = "<group>"; };
-		1F4D29211CE266A700C02C6E /* Images03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images03.swift; sourceTree = "<group>"; };
-		1F4D29221CE266A700C02C6E /* Images04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images04.swift; sourceTree = "<group>"; };
 		1F4D29231CE266A700C02C6E /* Images05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images05.swift; sourceTree = "<group>"; };
 		1F4D29241CE266A700C02C6E /* Images06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images06.swift; sourceTree = "<group>"; };
 		1F4D29251CE266A700C02C6E /* Images07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images07.swift; sourceTree = "<group>"; };
@@ -337,9 +330,6 @@
 		1F4D296E1CE266A700C02C6E /* Views03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views03.swift; sourceTree = "<group>"; };
 		1F4D296F1CE266A700C02C6E /* Views04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views04.swift; sourceTree = "<group>"; };
 		1F4D29701CE266A700C02C6E /* Views05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views05.swift; sourceTree = "<group>"; };
-		1F4D29711CE266A700C02C6E /* Views06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views06.swift; sourceTree = "<group>"; };
-		1F4D29721CE266A700C02C6E /* Views07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views07.swift; sourceTree = "<group>"; };
-		1F4D29731CE266A700C02C6E /* Views08.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views08.swift; sourceTree = "<group>"; };
 		1F4D29741CE266A700C02C6E /* Views09.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views09.swift; sourceTree = "<group>"; };
 		1F4D29751CE266A700C02C6E /* Views10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views10.swift; sourceTree = "<group>"; };
 		1F4D29761CE266A700C02C6E /* Views11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views11.swift; sourceTree = "<group>"; };
@@ -460,8 +450,6 @@
 				1F4D291E1CE266A700C02C6E /* ImageFilters10.swift */,
 				1F4D291F1CE266A700C02C6E /* Images01.swift */,
 				1F4D29201CE266A700C02C6E /* Images02.swift */,
-				1F4D29211CE266A700C02C6E /* Images03.swift */,
-				1F4D29221CE266A700C02C6E /* Images04.swift */,
 				1F4D29231CE266A700C02C6E /* Images05.swift */,
 				1F4D29241CE266A700C02C6E /* Images06.swift */,
 				1F4D29251CE266A700C02C6E /* Images07.swift */,
@@ -540,9 +528,6 @@
 				1F4D296E1CE266A700C02C6E /* Views03.swift */,
 				1F4D296F1CE266A700C02C6E /* Views04.swift */,
 				1F4D29701CE266A700C02C6E /* Views05.swift */,
-				1F4D29711CE266A700C02C6E /* Views06.swift */,
-				1F4D29721CE266A700C02C6E /* Views07.swift */,
-				1F4D29731CE266A700C02C6E /* Views08.swift */,
 				1F4D29741CE266A700C02C6E /* Views09.swift */,
 				1F4D29751CE266A700C02C6E /* Views10.swift */,
 				1F4D29761CE266A700C02C6E /* Views11.swift */,
@@ -681,11 +666,9 @@
 				1F4D29E11CE266A700C02C6E /* NewMath10.swift in Sources */,
 				1F4D29F01CE266A700C02C6E /* Shapes08.swift in Sources */,
 				1F4D29E91CE266A700C02C6E /* Random03.swift in Sources */,
-				1F4D29B21CE266A700C02C6E /* Images03.swift in Sources */,
 				1F4D29EE1CE266A700C02C6E /* Shapes06.swift in Sources */,
 				1F4D29F11CE266A700C02C6E /* Shapes09.swift in Sources */,
 				1F4D29911CE266A700C02C6E /* AudioPlayer03.swift in Sources */,
-				1F4D2A031CE266A700C02C6E /* Views07.swift in Sources */,
 				1F4D2A0D1CE266A700C02C6E /* Views18.swift in Sources */,
 				1F4D29CB1CE266A700C02C6E /* Math11.swift in Sources */,
 				1F4D299F1CE266A700C02C6E /* Colors09.swift in Sources */,
@@ -704,7 +687,6 @@
 				1F4D29D71CE266A700C02C6E /* Movies06.swift in Sources */,
 				1F4D29BC1CE266A700C02C6E /* Interaction06.swift in Sources */,
 				1F4D29D11CE266A700C02C6E /* MathComparePaths.swift in Sources */,
-				1F4D29B31CE266A700C02C6E /* Images04.swift in Sources */,
 				1F4D29881CE266A700C02C6E /* Advanced01.swift in Sources */,
 				1F4D299D1CE266A700C02C6E /* Colors07.swift in Sources */,
 				1F4D2A0F1CE266A700C02C6E /* Views20.swift in Sources */,
@@ -724,7 +706,6 @@
 				1F4D29A01CE266A700C02C6E /* Colors10.swift in Sources */,
 				1F4D29B51CE266A700C02C6E /* Images06.swift in Sources */,
 				1F4D29F71CE266A700C02C6E /* Shapes16.swift in Sources */,
-				1F4D2A041CE266A700C02C6E /* Views08.swift in Sources */,
 				1F4D29DC1CE266A700C02C6E /* NewMath05.swift in Sources */,
 				1F4D29A41CE266A700C02C6E /* Fonts04.swift in Sources */,
 				1F4D29931CE266A700C02C6E /* AudioPlayer05.swift in Sources */,
@@ -758,7 +739,6 @@
 				1F4D2A011CE266A700C02C6E /* Views05.swift in Sources */,
 				1F4D2A171CE266A700C02C6E /* Views28.swift in Sources */,
 				1F4D29E71CE266A700C02C6E /* Random01.swift in Sources */,
-				1F4D2A021CE266A700C02C6E /* Views06.swift in Sources */,
 				1F4D29B11CE266A700C02C6E /* Images02.swift in Sources */,
 				1F4D29F51CE266A700C02C6E /* Shapes13.swift in Sources */,
 				1F4D29F21CE266A700C02C6E /* Shapes10.swift in Sources */,

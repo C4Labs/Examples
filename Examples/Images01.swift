@@ -9,12 +9,9 @@
 import C4
 
 class Images01 : CanvasController {
-    
     override func setup() {
-
-
         let img = Image("chop")!
-        img.center = self.canvas.center;
-        self.canvas.add(img)
+        img.center = canvas.center;
+        canvas.add(img)
     }
 }

@@ -9,28 +9,15 @@
 import C4
 
 class Views04: CanvasController {
-    
-    var s1:Rectangle!
-    var s2:Ellipse!
-    
     override func setup() {
-        setupShapes()
-        s1.center = self.canvas.center
-        s2.center = s1.center
+        let f = Rect(0,0,200,200)
+        let r = Rectangle(frame: f)
+        canvas.add(r)
+        let e = Ellipse(frame: f)
+        e.fillColor = C4Pink
+        canvas.add(e)
 
-    }
-    
-    func setupShapes() {
-        let frame = Rect(0,0,100,100)
-
-
-        self.s1 = Rectangle(frame: frame)
-        self.canvas.add(s1)
-
-
-        self.s2 = Ellipse(frame: frame)
-        self.canvas.add(s2)
-
-
+        r.center = canvas.center
+        e.center = r.center
     }
 }

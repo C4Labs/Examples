@@ -11,7 +11,7 @@ import C4
 
 class ViewController: CanvasController {
     override func setup() {
-        let example = Shapes19()
+        let example = Views11()
         self.addChildViewController(example)
         canvas.add(example.canvas)
     }
