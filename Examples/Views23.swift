@@ -55,7 +55,7 @@ class Views23: CanvasController {
         s3.center = currentCenter
         self.canvas.add(s3)
         s3.shadow.offset = Size(30, 50)
-xx
+
         s1.shadow.opacity = 0.8
         s2.shadow.opacity = 0.8
         s3.shadow.opacity = 0.8
