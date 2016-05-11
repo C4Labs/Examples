@@ -9,41 +9,21 @@
 import C4
 
 class Views19: CanvasController {
-    
-    var s:Rectangle!
-    var img:Image!
-    
     override func setup() {
+        let img = Image("chop")!
+        img.constrainsProportions = true
+        img.height = canvas.height
+        img.center = canvas.center
+        canvas.add(img)
 
-
-        img = Image("chop")
-        s = Rectangle(frame: Rect(0,0,400,50))
-        img.center = self.canvas.center
-        s.center = Point(img.width/2 ,img.height/2)
-
-
-
-
-
-
-        img.layer?.mask = s.layer
-
-
-        self.canvas.add(img)
-        self.img.interactionEnabled = false
-
+        let mask = Rectangle(frame: Rect(0,0,img.height-20,50))
+        mask.center = img.bounds.center
+        img.mask = mask
 
         let a = ViewAnimation(duration: 1.5) {
-            self.s.transform.rotate(M_PI)
-    
-
+            mask.transform.rotate(M_PI)
         }
         a.repeats = true
-        a.curve = .Linear
-        wait(0.1) {
-            a.animate()
-        }
-
-
+        a.animate()
     }
 }

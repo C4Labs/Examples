@@ -9,18 +9,11 @@
 import C4
 
 class Views17: CanvasController {
-    
-    var img:Image!
-    var s:Ellipse!
-    
     override func setup() {
-        img = Image("chop")
-        s = Ellipse(frame: Rect(0, 0, img.height, img.height))
+        let img = Image("chop")!
+        img.center = canvas.center
+        canvas.add(img)
 
-
-        img.center = self.canvas.center
-        s.center = Point(img.width/2 ,img.height/2)
-        img.layer?.mask = s.layer
-        self.canvas.add(img)
+        img.mask = Circle(center: img.bounds.center, radius: img.height/2)
     }
 }
