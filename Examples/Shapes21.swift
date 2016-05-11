@@ -10,108 +10,49 @@ import UIKit
 import C4
 
 class Shapes21: CanvasController {
-    
-    var bezierCurve:Curve!
-    var quadraticCurve:QuadCurve!
-    var controlA:Circle!
-    var controlB:Circle!
-    var controlC:Ellipse!
-    var bezierEndPoints:[Point]!
-    var quadEndPoints:[Point]!
-    var a:UIPanGestureRecognizer!
-    var b:UIPanGestureRecognizer!
-    var c:UIPanGestureRecognizer!
+    var a, b, c: UIPanGestureRecognizer!
 
-    
     override func setup() {
         //create the end points for the bezier curve
-        bezierEndPoints = [
-            Point(0.3*self.canvas.width,self.canvas.height/3),
-            Point(0.7*self.canvas.width,self.canvas.height/3)
-        ]
-
-
-        //create the control points for the bezier curve
-        let bezierControlPoints = [Point(32,32), Point(self.canvas.width-32,32)]
-
+        var points = (Point(canvas.width/4, canvas.height/3), Point(canvas.width*3/4,canvas.height/3))
 
         //create the bezier curve
-        bezierCurve = Curve(begin: bezierEndPoints[0], control0: bezierControlPoints[0], control1: bezierControlPoints[1], end: bezierEndPoints[1])
-        self.canvas.add(bezierCurve)
-        //create the end points for the quadratic curve
-        quadEndPoints = [
-            Point(0.3*self.canvas.width,self.canvas.height*2/3),
-            Point(0.7*self.canvas.width,self.canvas.height*2/3)
-        ]
+        let bezier = Curve(begin: points.0, control0: points.0, control1: points.1, end: points.1)
+        self.canvas.add(bezier)
+        let cA = Circle(center: points.0, radius: 22)
+        let cB = Circle(center: points.1, radius: 22)
+        cB.fillColor = C4Pink
 
-
-        //create the control point for the quadratic curve
-        var quadControlPoint = self.canvas.center;
-        quadControlPoint.y = self.canvas.height - 32;
-
-
+        points.0.y *= 2.0
+        points.1.y *= 2.0
         //create the quadratic curve
-        quadraticCurve = QuadCurve(begin: quadEndPoints[0], control: quadControlPoint, end: quadEndPoints[1])
+        let quad = QuadCurve(begin: points.0, control: lerp(points.0, points.1, at: 0.5), end: points.1)
 
+        self.canvas.add(quad)
+        let cC = Circle(center: quad.controlPoint, radius: 22)
+        cC.fillColor = C4Purple
 
-        self.canvas.add(quadraticCurve)
-        //create 3 control shapes
-        controlA = Circle(center: Point(32,32), radius: 25)
-        controlB = Circle(center: Point(self.canvas.width-32,32), radius: 25)
-        controlC = Circle(center: quadControlPoint, radius: 25)
-
-
-
-
-        //style the control shapes
-        controlA.lineWidth = 0.0
-        controlB.lineWidth = 0.0
-        controlC.lineWidth = 0.0
-        controlB.fillColor = C4Pink
-        controlC.fillColor = C4Blue
-
-
-        self.canvas.add(controlA)
-        self.canvas.add(controlB)
-        self.canvas.add(controlC)
-
-
-
-
-
+        self.canvas.add(cA)
+        self.canvas.add(cB)
+        self.canvas.add(cC)
 
         //add drag gestures to the control shapes
-        a = controlA.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            var center = self.controlA.center
-            center.x += translation.x
-            center.y += translation.y
-            self.controlA.center = center
+        a = cA.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            cA.center += translation
+            bezier.controlPoints.0 = cA.center
             self.a.setTranslation(CGPointZero, inView: self.canvas.view)
-    
-
-            self.bezierCurve.controlPoints = (self.controlA.center, self.controlB.center)
-
         }
-        b = controlB.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            var center = self.controlB.center
-            center.x += translation.x
-            center.y += translation.y
-            self.controlB.center = center
+
+        b = cB.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            cB.center += translation
+            bezier.controlPoints.1 = cB.center
             self.b.setTranslation(CGPointZero, inView: self.canvas.view)
-    
-
-            self.bezierCurve.controlPoints = (self.controlA.center, self.controlB.center)
         }
-        c = controlC.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            var center = self.controlC.center
-            center.x += translation.x
-            center.y += translation.y
-            self.controlC.center = center
+
+        c = cC.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            cC.center += translation
+            quad.controlPoint = cC.center
             self.c.setTranslation(CGPointZero, inView: self.canvas.view)
-    
-
-            self.quadraticCurve.controlPoints = (self.controlC.center,self.controlC.center)
         }
-
     }
 }

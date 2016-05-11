@@ -11,22 +11,17 @@ import C4
 
 class Shapes18: CanvasController {
     override func setup() {
-        var isCircle = true
+        let small = Star(center: canvas.center, pointCount: 25, innerRadius: 50, outerRadius: 100)
+        let large = Star(center: canvas.center, pointCount: 25, innerRadius: 150, outerRadius: 100)
+        canvas.add(small)
 
-        let circle = Circle(center: canvas.center, radius: 100)
-        let square = Rectangle(frame: circle.frame)
-
-        let container = Shape(frame: circle.frame)
-        container.path = circle.path
-        canvas.add(container)
-
-        canvas.addTapGestureRecognizer { (center, location, state) -> () in
-            if isCircle {
-                container.path = square.path
-            } else {
-                container.path = circle.path
-            }
-            isCircle = !isCircle
+        let a = ViewAnimation(duration: 1.0) {
+            small.path = large.path
+            small.center = self.canvas.center
+            small.fillColor = C4Pink
         }
+        a.autoreverses = true
+        a.repeats = true
+        a.animate()
     }
 }
