@@ -10,84 +10,39 @@ import C4
 import UIKit
 
 class Colors09: CanvasController {
-    
-    var red:Rectangle!
-    var blue:Rectangle!
-    var grey:Rectangle!
-    var redColorComponents:[Double]!
-    var blueColorComponents:[Double]!
-    var greyColorComponents:[Double]!
-    
+
     override func setup() {
-        setupShapes()
+        let dy = Vector(x: 0, y: canvas.height/5)
 
+        var frame = Rect(Point(), Size(canvas.width * 0.9, canvas.height/6))
+        frame.center = Point(canvas.center.x, dy.y)
 
-        //strings will be created from these numbers in the setupLabels method
-        setupLabels()
+        let blue = generateRect(frame, text: "C4Blue: \(C4Blue.red), \(C4Blue.green), \(C4Blue.blue), \(C4Blue.alpha)")
+        canvas.add(blue)
+
+        frame.center += dy
+        let pink = generateRect(frame, text: "C4Pink: \(C4Pink.red), \(C4Pink.green), \(C4Pink.blue), \(C4Pink.alpha)")
+        pink.fillColor = C4Pink
+
+        frame.center += dy
+        let purple = generateRect(frame, text: "C4Purple: \(C4Purple.red), \(C4Purple.green), \(C4Purple.blue), \(C4Purple.alpha)")
+        purple.fillColor = C4Purple
+
+        frame.center += dy
+        let gray = generateRect(frame, text: "C4Grey: \(C4Grey.red), \(C4Grey.green), \(C4Grey.blue), \(C4Grey.alpha)")
+        gray.fillColor = C4Grey
     }
-    
-    func setupShapes() {
-        let frame = Rect(0, 0, self.canvas.width*0.9, self.canvas.height/5.0)
-        red =  Rectangle(frame: frame)
-        blue =  Rectangle(frame: frame)
-        grey =  Rectangle(frame: frame)
 
+    func generateRect(frame: Rect, text: String) -> Rectangle {
+        let rect = Rectangle(frame: frame)
+        canvas.add(rect)
+        let label = TextShape(text: text, font: Font(name: "Helvetica", size: 20)!)!
 
-        red.fillColor  = C4Pink
-        blue.fillColor = C4Blue
-        grey.fillColor = C4Grey
+        label.fillColor = text.hasPrefix("C4Grey") ? C4Purple : C4Grey
 
-
-        red.lineWidth = 0.0
-        blue.lineWidth = 0.0
-        grey.lineWidth = 1.0
-        grey.strokeColor = lightGray//allows us to see the 3rd rectangle
-
-
-        red.center  = Point(self.canvas.center.x, self.canvas.height/4)
-        blue.center = Point(self.canvas.center.x, self.canvas.height*2/4)
-        grey.center = Point(self.canvas.center.x, self.canvas.height*3/4)
-
-
-        self.canvas.add(red)
-        self.canvas.add(blue)
-        self.canvas.add(grey)
-
-
-    }
-    
-    func setupLabels() {
-        let f = Font(name: "ArialRoundedMTBold", size: 30.0)!
-        var l:TextShape!
-
-
-        var colorString = "\(red.fillColor!.red),\(red.fillColor!.green),\(red.fillColor!.blue),\(red.fillColor!.alpha)"
-
-
-        l = TextShape(text: colorString, font: f)
-        l.fillColor = white
-        l.center = red.center;
-        self.canvas.add(l)
-
-
-        colorString = "\(blue.fillColor!.red),\(blue.fillColor!.green),\(blue.fillColor!.blue),\(blue.fillColor!.alpha)"
-
-
-        l = TextShape(text: colorString, font: f)
-        l.fillColor = white
-        l.center = blue.center;
-        self.canvas.add(l)
-
-
-        colorString = "\(grey.fillColor!.red),\(grey.fillColor!.green),\(grey.fillColor!.blue),\(red.fillColor!.alpha)"
-
-
-        l = TextShape(text: colorString, font: f)
-        l.fillColor = lightGray
-        l.center = grey.center;
-        self.canvas.add(l)
-
-
+        label.center = rect.bounds.center
+        rect.add(label)
+        return rect
     }
 }
 

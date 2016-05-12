@@ -9,13 +9,11 @@
 import C4
 
 class Colors10: CanvasController {
-    
-    //this example should show Color from hexValue
-    
     override func setup() {
-        let c = Color(0xFF0012FF)
-        let s1 = Circle(center: self.canvas.center, radius: 50)
-        s1.fillColor = c
-        canvas.add(s1)
+        let circle = Circle(center: self.canvas.center, radius: 100)
+        circle.fillColor = Color(0xFF3300)
+        circle.strokeColor = Color(0x3366FF)
+        circle.lineWidth = 50.0
+        canvas.add(circle)
     }
 }

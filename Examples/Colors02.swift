@@ -10,71 +10,39 @@ import C4
 import UIKit
 
 class Colors02: CanvasController {
-    
-    var pink:Rectangle!
-    var blue:Rectangle!
-    var grey:Rectangle!
-    
+
     override func setup() {
+        let dy = Vector(x: 0, y: canvas.height/5)
 
+        var frame = Rect(Point(), Size(canvas.width * 0.9, canvas.height/6))
+        frame.center = Point(canvas.center.x, dy.y)
 
-        setupShapes()
-        setupLabels()
+        let blue = generateRect(frame, text: "C4Blue")
+        canvas.add(blue)
 
+        frame.center += dy
+        let pink = generateRect(frame, text: "C4Pink")
+        pink.fillColor = C4Pink
 
-        pink.fillColor  = C4Pink
-        blue.fillColor = C4Blue
-        grey.fillColor = C4Grey
-        grey.strokeColor = lightGray//makes the grey box visible
+        frame.center += dy
+        let purple = generateRect(frame, text: "C4Purple")
+        purple.fillColor = C4Purple
 
-
+        frame.center += dy
+        let gray = generateRect(frame, text: "C4Grey")
+        gray.fillColor = C4Grey
     }
-    
-    func setupShapes() {
 
+    func generateRect(frame: Rect, text: String) -> Rectangle {
+        let rect = Rectangle(frame: frame)
+        canvas.add(rect)
+        let label = TextShape(text: text, font: Font(name: "Helvetica", size: 20)!)!
 
-        let frame = Rect(0, 0, self.canvas.width*0.9, self.canvas.height/5.0)
-        pink =  Rectangle(frame: frame)
-        blue =  Rectangle(frame: frame)
-        grey =  Rectangle(frame: frame)
+        label.fillColor = text == "C4Grey" ? C4Purple : C4Grey
 
-
-        pink.lineWidth = 0.0
-        blue.lineWidth = 0.0
-        grey.lineWidth = 0.5//allows us to see the border of grey
-
-
-        pink.center  = Point(self.canvas.center.x, self.canvas.height/4)
-        blue.center = Point(self.canvas.center.x, self.canvas.height*2/4)
-        grey.center = Point(self.canvas.center.x, self.canvas.height*3/4)
-
-
-        self.canvas.add(pink)
-        self.canvas.add(blue)
-        self.canvas.add(grey)
-    }
-    
-    func setupLabels() {
-        let f = Font(name: "ArialRoundedMTBold", size: 30.0)!
-        var l:TextShape!
-
-
-        l = TextShape(text: "C4Pink", font: f)
-        l.fillColor = white
-        l.center = pink.center;
-        self.canvas.add(l)
-
-
-        l = TextShape(text: "C4Blue", font: f)
-        l.fillColor = white
-        l.center = blue.center;
-        self.canvas.add(l)
-
-
-        l = TextShape(text: "C4Grey", font: f)
-        l.fillColor = lightGray
-        l.center = grey.center;
-        self.canvas.add(l)
+        label.center = rect.bounds.center
+        rect.add(label)
+        return rect
     }
 }
 
