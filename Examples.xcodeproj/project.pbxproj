@@ -56,10 +56,6 @@
 		1F4D29B91CE266A700C02C6E /* Interaction02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29281CE266A700C02C6E /* Interaction02.swift */; };
 		1F4D29BA1CE266A700C02C6E /* Interaction03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29291CE266A700C02C6E /* Interaction03.swift */; };
 		1F4D29BB1CE266A700C02C6E /* Interaction04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292A1CE266A700C02C6E /* Interaction04.swift */; };
-		1F4D29BC1CE266A700C02C6E /* Interaction06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292B1CE266A700C02C6E /* Interaction06.swift */; };
-		1F4D29BD1CE266A700C02C6E /* Interaction07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292C1CE266A700C02C6E /* Interaction07.swift */; };
-		1F4D29BE1CE266A700C02C6E /* Interaction08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292D1CE266A700C02C6E /* Interaction08.swift */; };
-		1F4D29BF1CE266A700C02C6E /* Interaction09.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292E1CE266A700C02C6E /* Interaction09.swift */; };
 		1F4D29C01CE266A700C02C6E /* Interaction10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292F1CE266A700C02C6E /* Interaction10.swift */; };
 		1F4D29C11CE266A700C02C6E /* Math01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29301CE266A700C02C6E /* Math01.swift */; };
 		1F4D29C21CE266A700C02C6E /* Math02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29311CE266A700C02C6E /* Math02.swift */; };
@@ -97,9 +93,7 @@
 		1F4D29E41CE266A700C02C6E /* NewMath13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29531CE266A700C02C6E /* NewMath13.swift */; };
 		1F4D29E51CE266A700C02C6E /* NewMath14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29541CE266A700C02C6E /* NewMath14.swift */; };
 		1F4D29E61CE266A700C02C6E /* NewMath15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29551CE266A700C02C6E /* NewMath15.swift */; };
-		1F4D29E71CE266A700C02C6E /* Random01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29561CE266A700C02C6E /* Random01.swift */; };
-		1F4D29E81CE266A700C02C6E /* Random02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29571CE266A700C02C6E /* Random02.swift */; };
-		1F4D29E91CE266A700C02C6E /* Random03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29581CE266A700C02C6E /* Random03.swift */; };
+		1F4D29E71CE266A700C02C6E /* Interaction05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29561CE266A700C02C6E /* Interaction05.swift */; };
 		1F4D29EA1CE266A700C02C6E /* Shapes01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29591CE266A700C02C6E /* Shapes01.swift */; };
 		1F4D29EB1CE266A700C02C6E /* Shapes02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D295A1CE266A700C02C6E /* Shapes02.swift */; };
 		1F4D29EC1CE266A700C02C6E /* Shapes04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D295B1CE266A700C02C6E /* Shapes04.swift */; };
@@ -238,10 +232,6 @@
 		1F4D29281CE266A700C02C6E /* Interaction02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction02.swift; sourceTree = "<group>"; };
 		1F4D29291CE266A700C02C6E /* Interaction03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction03.swift; sourceTree = "<group>"; };
 		1F4D292A1CE266A700C02C6E /* Interaction04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction04.swift; sourceTree = "<group>"; };
-		1F4D292B1CE266A700C02C6E /* Interaction06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction06.swift; sourceTree = "<group>"; };
-		1F4D292C1CE266A700C02C6E /* Interaction07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction07.swift; sourceTree = "<group>"; };
-		1F4D292D1CE266A700C02C6E /* Interaction08.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction08.swift; sourceTree = "<group>"; };
-		1F4D292E1CE266A700C02C6E /* Interaction09.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction09.swift; sourceTree = "<group>"; };
 		1F4D292F1CE266A700C02C6E /* Interaction10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction10.swift; sourceTree = "<group>"; };
 		1F4D29301CE266A700C02C6E /* Math01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math01.swift; sourceTree = "<group>"; };
 		1F4D29311CE266A700C02C6E /* Math02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math02.swift; sourceTree = "<group>"; };
@@ -279,9 +269,7 @@
 		1F4D29531CE266A700C02C6E /* NewMath13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMath13.swift; sourceTree = "<group>"; };
 		1F4D29541CE266A700C02C6E /* NewMath14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMath14.swift; sourceTree = "<group>"; };
 		1F4D29551CE266A700C02C6E /* NewMath15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMath15.swift; sourceTree = "<group>"; };
-		1F4D29561CE266A700C02C6E /* Random01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random01.swift; sourceTree = "<group>"; };
-		1F4D29571CE266A700C02C6E /* Random02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random02.swift; sourceTree = "<group>"; };
-		1F4D29581CE266A700C02C6E /* Random03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random03.swift; sourceTree = "<group>"; };
+		1F4D29561CE266A700C02C6E /* Interaction05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction05.swift; sourceTree = "<group>"; };
 		1F4D29591CE266A700C02C6E /* Shapes01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes01.swift; sourceTree = "<group>"; };
 		1F4D295A1CE266A700C02C6E /* Shapes02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes02.swift; sourceTree = "<group>"; };
 		1F4D295B1CE266A700C02C6E /* Shapes04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes04.swift; sourceTree = "<group>"; };
@@ -423,10 +411,7 @@
 				1F4D29281CE266A700C02C6E /* Interaction02.swift */,
 				1F4D29291CE266A700C02C6E /* Interaction03.swift */,
 				1F4D292A1CE266A700C02C6E /* Interaction04.swift */,
-				1F4D292B1CE266A700C02C6E /* Interaction06.swift */,
-				1F4D292C1CE266A700C02C6E /* Interaction07.swift */,
-				1F4D292D1CE266A700C02C6E /* Interaction08.swift */,
-				1F4D292E1CE266A700C02C6E /* Interaction09.swift */,
+				1F4D29561CE266A700C02C6E /* Interaction05.swift */,
 				1F4D292F1CE266A700C02C6E /* Interaction10.swift */,
 				1F4D29301CE266A700C02C6E /* Math01.swift */,
 				1F4D29311CE266A700C02C6E /* Math02.swift */,
@@ -464,9 +449,6 @@
 				1F4D29531CE266A700C02C6E /* NewMath13.swift */,
 				1F4D29541CE266A700C02C6E /* NewMath14.swift */,
 				1F4D29551CE266A700C02C6E /* NewMath15.swift */,
-				1F4D29561CE266A700C02C6E /* Random01.swift */,
-				1F4D29571CE266A700C02C6E /* Random02.swift */,
-				1F4D29581CE266A700C02C6E /* Random03.swift */,
 				1F4D29591CE266A700C02C6E /* Shapes01.swift */,
 				1F4D295A1CE266A700C02C6E /* Shapes02.swift */,
 				1F4D295B1CE266A700C02C6E /* Shapes04.swift */,
@@ -619,7 +601,6 @@
 				1F4D29E51CE266A700C02C6E /* NewMath14.swift in Sources */,
 				1F4D29E11CE266A700C02C6E /* NewMath10.swift in Sources */,
 				1F4D29F01CE266A700C02C6E /* Shapes08.swift in Sources */,
-				1F4D29E91CE266A700C02C6E /* Random03.swift in Sources */,
 				1F4D29EE1CE266A700C02C6E /* Shapes06.swift in Sources */,
 				1F4D29F11CE266A700C02C6E /* Shapes09.swift in Sources */,
 				1F4D29911CE266A700C02C6E /* AudioPlayer03.swift in Sources */,
@@ -634,7 +615,6 @@
 				1F4D29901CE266A700C02C6E /* AudioPlayer02.swift in Sources */,
 				1F4D29CE1CE266A700C02C6E /* Math14.swift in Sources */,
 				1F4D29D71CE266A700C02C6E /* Movies06.swift in Sources */,
-				1F4D29BC1CE266A700C02C6E /* Interaction06.swift in Sources */,
 				1F4D29D11CE266A700C02C6E /* MathComparePaths.swift in Sources */,
 				1F4D29881CE266A700C02C6E /* Advanced01.swift in Sources */,
 				1F4D2A0F1CE266A700C02C6E /* Views20.swift in Sources */,
@@ -677,11 +657,10 @@
 				1F4D29CC1CE266A700C02C6E /* Math12.swift in Sources */,
 				1F4D29A51CE266A700C02C6E /* Fonts05.swift in Sources */,
 				1F4D29A91CE266A700C02C6E /* ImageFilters04.swift in Sources */,
-				1F4D29BD1CE266A700C02C6E /* Interaction07.swift in Sources */,
 				1F4D29F91CE266A700C02C6E /* Shapes18.swift in Sources */,
 				1F4D29FC1CE266A700C02C6E /* Shapes21.swift in Sources */,
 				1F4D2A011CE266A700C02C6E /* Views05.swift in Sources */,
-				1F4D29E71CE266A700C02C6E /* Random01.swift in Sources */,
+				1F4D29E71CE266A700C02C6E /* Interaction05.swift in Sources */,
 				1F4D29B11CE266A700C02C6E /* Images02.swift in Sources */,
 				1F4D29F51CE266A700C02C6E /* Shapes13.swift in Sources */,
 				1F4D29F21CE266A700C02C6E /* Shapes10.swift in Sources */,
@@ -690,7 +669,6 @@
 				1F4D29C21CE266A700C02C6E /* Math02.swift in Sources */,
 				1F4D29E61CE266A700C02C6E /* NewMath15.swift in Sources */,
 				1F4D29C91CE266A700C02C6E /* Math09.swift in Sources */,
-				1F4D29BE1CE266A700C02C6E /* Interaction08.swift in Sources */,
 				1F4D29EA1CE266A700C02C6E /* Shapes01.swift in Sources */,
 				1F4D29EB1CE266A700C02C6E /* Shapes02.swift in Sources */,
 				1F4D29981CE266A700C02C6E /* Colors02.swift in Sources */,
@@ -705,11 +683,9 @@
 				1F4D29E01CE266A700C02C6E /* NewMath09.swift in Sources */,
 				1F4D29DF1CE266A700C02C6E /* NewMath08.swift in Sources */,
 				1F4D29C31CE266A700C02C6E /* Math03.swift in Sources */,
-				1F4D29E81CE266A700C02C6E /* Random02.swift in Sources */,
 				1F4D29921CE266A700C02C6E /* AudioPlayer04.swift in Sources */,
 				1F4D29A21CE266A700C02C6E /* Fonts02.swift in Sources */,
 				1F4D29D51CE266A700C02C6E /* Movies04.swift in Sources */,
-				1F4D29BF1CE266A700C02C6E /* Interaction09.swift in Sources */,
 				1F4D29AD1CE266A700C02C6E /* ImageFilters08.swift in Sources */,
 				1F4D29991CE266A700C02C6E /* Colors03.swift in Sources */,
 				1F4D29B91CE266A700C02C6E /* Interaction02.swift in Sources */,

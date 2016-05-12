@@ -9,46 +9,40 @@
 import C4
 
 class Interaction01: CanvasController {
-    
-    let s1 = Circle(center: Point(), radius: 50)
-    let s2 = Circle(center: Point(), radius: 50)
 
     override func setup() {
 
-        s1.fillColor = C4Pink
-        s1.center = self.canvas.center
-        s1.center.y -= 75
-        s2.center = self.canvas.center
-        s2.center.y += 75
+        let dy = Vector(x: 0, y: canvas.height/6)
 
-        s1.addTapGestureRecognizer { (center,location, state) -> () in
-            self.s1.fillColor = C4Pink
-            self.s1.post("tapped")
+        let top = Circle(center: canvas.center - dy, radius: 50)
+        top.fillColor = C4Pink
+        canvas.add(top)
+
+        let bottom = Circle(center: canvas.center + dy, radius: 50)
+        canvas.add(bottom)
+
+        top.addTapGestureRecognizer { center,location, state in
+            top.fillColor = C4Pink
+            top.post("tapped")
         }
-        s2.addTapGestureRecognizer { (center,location, state) -> () in
-            self.s2.fillColor = C4Blue
-            self.s2.post("tapped")
+
+        bottom.addTapGestureRecognizer { center,location, state in
+            bottom.fillColor = C4Blue
+            bottom.post("tapped")
         }
-        canvas.addTapGestureRecognizer { (center,location, state) -> () in
+
+        canvas.addTapGestureRecognizer { center,location, state in
             self.canvas.backgroundColor = C4Grey
-            self.canvas.layer?.post("tapped")
+            top.fillColor = C4Grey
+            bottom.fillColor = C4Grey
         }
-        self.s1.on(event: "tapped", from: self.canvas.layer) { (Void) -> Void in
-            self.s1.fillColor = self.canvas.backgroundColor
-        }
-        self.s2.layer?.on(event: "tapped", from: self.canvas.layer) { (Void) -> Void in
-            self.s2.fillColor = self.canvas.backgroundColor
-        }
-        canvas.on(event: "tapped", from: s1) { (Void) -> Void in
-            self.canvas.backgroundColor = self.s1.fillColor
-        }
-        canvas.on(event: "tapped", from: s2) { (Void) -> Void in
-            self.canvas.backgroundColor = self.s2.fillColor
-        }
-        canvas.add(s1)
-        canvas.add(s2)
 
+        on(event: "tapped", from: top) {
+            self.canvas.backgroundColor = top.fillColor
+        }
 
-
+        on(event: "tapped", from: bottom) {
+            self.canvas.backgroundColor = bottom.fillColor
+        }
     }
 }

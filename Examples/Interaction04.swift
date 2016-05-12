@@ -10,21 +10,39 @@ import C4
 
 class Interaction04: CanvasController {
     
-    var s1:Circle!
-    
     override func setup() {
-        s1 = Circle(center: self.canvas.center, radius: 50)
+        let dx = Vector(x: 100, y: 0)
+        let dy = Vector(x: 0, y: 100)
 
+        let c = canvas.center
 
-        let a = s1.addPanGestureRecognizer {(center, location, translation, velocity, state) -> () in
-            self.s1.fillColor = Color(red: random01(), green: random01(), blue: random01(), alpha: random01())
+        let defaultPoints : [Point] = [
+            ((c - dx) - dy),
+            c - dy,
+            (c + dx) - dy,
+            c + dx,
+            (c + dx) + dy,
+            c + dy,
+            (c - dx) + dy,
+            c - dx]
+
+        var polyPoints = defaultPoints
+
+        let poly = Polygon(polyPoints)
+        poly.interactionEnabled = false
+        poly.close()
+        poly.lineWidth = 40.0
+        canvas.add(poly)
+
+        let pan = canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            polyPoints = defaultPoints
+            for i in 0..<locations.count {
+                polyPoints[i * 2] = locations[i]
+            }
+            poly.points = polyPoints
+            poly.close()
         }
-        a.maximumNumberOfTouches = 2
-        canvas.add(s1)
 
-
-
-
-
+        pan.maximumNumberOfTouches = 4
     }
 }

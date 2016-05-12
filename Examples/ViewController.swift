@@ -11,7 +11,7 @@ import C4
 
 class ViewController: CanvasController {
     override func setup() {
-        let example = Colors10()
+        let example = Interaction10()
         self.addChildViewController(example)
         canvas.add(example.canvas)
     }
