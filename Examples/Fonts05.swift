@@ -40,7 +40,7 @@ class Fonts05: CanvasController {
                 l.center = point
                 point.y += 30
                 scrollview.add(l)
-                scrollview.contentSize = CGSizeMake(1, CGFloat(l.origin.y + l.height))
+                scrollview.contentSize = CGSize(width: 1, height: CGFloat(l.origin.y + l.height))
             }
         }
     }

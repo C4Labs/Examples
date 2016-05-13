@@ -56,4 +56,3 @@ class Colors09: CanvasController {
         return rect
     }
 }
-

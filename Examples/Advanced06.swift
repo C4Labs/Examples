@@ -34,7 +34,7 @@ class Advanced06: CanvasController {
 
         let f = Font(name: "Menlo-Regular", size: 12)!
         label = TextShape(text: "Automata", font: f)!
-        label.origin = Point(10,10)
+        label.origin = Point(10, 10)
         label.fillColor = C4Blue
         canvas.add(label)
 
@@ -43,20 +43,20 @@ class Advanced06: CanvasController {
         }
     }
 
-    var i = 0
+    var count = 0
     func generateNextImage() {
         images = [Image]()
 
         ShapeLayer.disableActions = true
-        label.text = "Automata – \(i+1)/256"
-        label.origin = Point(10,10)
-        if let img = createImage(allRules[i]) {
+        label.text = "Automata – \(count+1)/256"
+        label.origin = Point(10, 10)
+        if let img = createImage(allRules[count]) {
             images.append(img)
             image.contents = img.contents
         }
 
-        i += 1
-        if i < allRules.count {
+        count += 1
+        if count < allRules.count {
             wait(0.033) {
                 self.generateNextImage()
             }
@@ -75,7 +75,7 @@ class Advanced06: CanvasController {
         for a in 0...1 {
             for b in 0...1 {
                 for c in 0...1 {
-                    for d in 0...1{
+                    for d in 0...1 {
                         for e in 0...1 {
                             for f in 0...1 {
                                 for g in 0...1 {

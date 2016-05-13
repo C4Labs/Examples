@@ -20,7 +20,6 @@
 import C4
 import UIKit
 
-
 class Advanced05: CanvasController {
     override func setup() {
         var bottom = [Circle]()
@@ -82,12 +81,7 @@ class Advanced05: CanvasController {
             shapes.2.center = point
         }
 
-        let group = ViewAnimationGroup(animations: [b,m,t])
+        let group = ViewAnimationGroup(animations: [b, m, t])
         group.animate()
     }
 }
-
-
-
-
-

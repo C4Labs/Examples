@@ -21,7 +21,7 @@ import C4
 
 class AudioPlayer01: CanvasController {
     let audioPlayer = AudioPlayer("C4Loop.aif")!
-    
+
     override func setup() {
         audioPlayer.loops = true
         audioPlayer.play()

@@ -44,7 +44,7 @@ class Shapes02: CanvasController {
         let dx = Vector(x: canvas.width/5.0, y: 0)
 
         //position all the objects
-        
+
         line.center = Point(0, canvas.center.y) + dx
         triangle.center = line.center + dx
         polygon.center = triangle.center + dx

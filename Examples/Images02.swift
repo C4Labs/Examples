@@ -19,7 +19,7 @@
 
 import C4
 
-class Images02 : CanvasController {
+class Images02: CanvasController {
     override func setup() {
         let normal = Image("rockies")!
         normal.center = canvas.center

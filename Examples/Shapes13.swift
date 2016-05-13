@@ -21,9 +21,9 @@ import UIKit
 import C4
 
 class Shapes13: CanvasController {
-    var line1:Line!
-    var line2:Line!
-    
+    var line1: Line!
+    var line2: Line!
+
     override func setup() {
         createLines()
         line1.lineDashPattern = [5, 10]

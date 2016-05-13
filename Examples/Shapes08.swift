@@ -25,10 +25,9 @@ class Shapes08: CanvasController {
         let circle = Circle(center: self.canvas.center, radius: 100)
 
         //change the line width
-        circle.lineWidth = 10
+        circle.lineWidth = 40
 
         //add it to the canvas
         canvas.add(circle)
     }
 }
-

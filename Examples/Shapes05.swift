@@ -19,7 +19,7 @@
 
 import C4
 
-class Shapes05 : CanvasController {
+class Shapes05: CanvasController {
     override func setup() {
         //create a font (120 is big enough for an iPad, make it smaller for iPod/iPhone)
         let f = Font(name: "Helvetica", size: 120)!

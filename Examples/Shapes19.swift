@@ -22,7 +22,7 @@ import C4
 
 class Shapes19: CanvasController {
     override func setup() {
-        var points = (Point(),Point(canvas.width,0))
+        var points = (Point(), Point(canvas.width, 0))
 
         var step = 0.0
         repeat {

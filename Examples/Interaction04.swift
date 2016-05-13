@@ -20,14 +20,14 @@
 import C4
 
 class Interaction04: CanvasController {
-    
+
     override func setup() {
         let dx = Vector(x: 100, y: 0)
         let dy = Vector(x: 0, y: 100)
 
         let c = canvas.center
 
-        let defaultPoints : [Point] = [
+        let defaultPoints: [Point] = [
             ((c - dx) - dy),
             c - dy,
             (c + dx) - dy,

@@ -22,7 +22,7 @@ import UIKit
 
 class NewMath05: CanvasController {
 
-    var shapes : [Shape] = [Shape]()
+    var shapes = [Shape]()
     var columns = 5
     var rows = 5
 
@@ -30,11 +30,11 @@ class NewMath05: CanvasController {
         let dx = canvas.width / Double(columns)
         let dy = canvas.height / Double(rows)
 
-        let frame = Rect(0,0,50,16)
+        let frame = Rect(0, 0, 50, 16)
         for x in 0..<columns {
             for y in 0..<rows {
                 let shape = Rectangle(frame: frame)//height must be greater than 16 or the cornerRadiusHeight * 2
-                shape.anchorPoint = Point(0.0,0.5)
+                shape.anchorPoint = Point(0.0, 0.5)
                 shape.interactionEnabled = false
 
                 let newX = dx * (Double(x) + 0.5)
@@ -56,4 +56,3 @@ class NewMath05: CanvasController {
         }
     }
 }
-

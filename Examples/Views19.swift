@@ -27,7 +27,7 @@ class Views19: CanvasController {
         img.center = canvas.center
         canvas.add(img)
 
-        let mask = Rectangle(frame: Rect(0,0,img.height-20,50))
+        let mask = Rectangle(frame: Rect(0, 0, img.height-20, 50))
         mask.center = img.bounds.center
         img.mask = mask
 

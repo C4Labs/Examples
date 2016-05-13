@@ -32,17 +32,17 @@ class Interaction01: CanvasController {
         let bottom = Circle(center: canvas.center + dy, radius: 50)
         canvas.add(bottom)
 
-        top.addTapGestureRecognizer { center,location, state in
+        top.addTapGestureRecognizer { center, location, state in
             top.fillColor = C4Pink
             top.post("tapped")
         }
 
-        bottom.addTapGestureRecognizer { center,location, state in
+        bottom.addTapGestureRecognizer { center, location, state in
             bottom.fillColor = C4Blue
             bottom.post("tapped")
         }
 
-        canvas.addTapGestureRecognizer { center,location, state in
+        canvas.addTapGestureRecognizer { center, location, state in
             self.canvas.backgroundColor = C4Grey
             top.fillColor = C4Grey
             bottom.fillColor = C4Grey

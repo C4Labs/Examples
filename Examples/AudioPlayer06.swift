@@ -36,7 +36,7 @@ class AudioPlayer06: CanvasController {
     }
 
     func updateBar(point: Point) {
-        barFill.origin = Point(point.x-canvas.width,0)
+        barFill.origin = Point(point.x-canvas.width, 0)
     }
 
     func createIndicators() {

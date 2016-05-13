@@ -51,9 +51,9 @@ class Colors03: CanvasController {
 
             let ts = TextShape(text: labels[i], font: f)!
             //all labels will be white except the last two
-            if(i < 13) {
-                ts.fillColor = white
-            } else {
+            ts.fillColor = white
+
+            if i >= 13 {
                 ts.fillColor = C4Purple
                 shape.lineWidth = 1.0
             }
@@ -62,4 +62,3 @@ class Colors03: CanvasController {
         }
     }
 }
-

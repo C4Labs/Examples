@@ -25,7 +25,7 @@ class Shapes20: CanvasController {
         let dy = Vector(x: 0, y: 2.0)
 
         //create and array of points to use for lines
-        var points = (Point()-dy,Point(self.canvas.width,0.0)-dy)
+        var points = (Point()-dy, Point(canvas.width, 0.0)-dy)
 
         //figure out the total number of lines to draw
         let totalLineCount = self.canvas.height / 2.0 //default line width of 1.0

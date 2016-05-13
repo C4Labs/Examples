@@ -20,7 +20,7 @@
 import C4
 import UIKit
 
-class Images05 : CanvasController {
+class Images05: CanvasController {
     override func setup() {
         let chop = Image("chop")!
         let rockies = Image("rockies")!

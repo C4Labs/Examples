@@ -21,7 +21,7 @@ import C4
 
 class Views04: CanvasController {
     override func setup() {
-        let f = Rect(0,0,200,200)
+        let f = Rect(0, 0, 200, 200)
         let r = Rectangle(frame: f)
         canvas.add(r)
         let e = Ellipse(frame: f)

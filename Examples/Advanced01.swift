@@ -23,18 +23,18 @@ import UIKit
 class Advanced01: CanvasController {
     var pts = (Point(), Point())
     var canvasShapeCount = 0
-    
+
     override func setup() {
         pts = (canvas.center, canvas.center)
         createArc()
     }
-    
+
     func createArc() {
         pts.0 = pts.1
-        pts.1 = Point(random01()*self.canvas.width, self.canvas.center.y);
+        pts.1 = Point(random01()*self.canvas.width, self.canvas.center.y)
 
         let up = canvasShapeCount % 2 == 0 ? true : false
-        let arc = self.arcBetween(pts, up: up)
+        let arc = self.arcBetween(pts, upwards: up)
 
         canvas.add(arc)
         canvasShapeCount += 1
@@ -47,37 +47,37 @@ class Advanced01: CanvasController {
             }
         }
 
-        a.addCompletionObserver { 
+        a.addCompletionObserver {
             self.createArc()
         }
         a.animate()
    }
-    
-    func arcBetween(points: (Point, Point) ,up:Bool) -> Arc {
+
+    func arcBetween(points: (Point, Point), upwards: Bool) -> Arc {
         ShapeLayer.disableActions = true
 
         let s = Arc(center: lerp(points.0, points.1, at: 0.5),
                     radius: distance(points.0, rhs: points.1)/2,
-                    start: up ? M_PI : 0,
-                    end: up ? 2 * M_PI : M_PI,
+                    start: upwards ? M_PI : 0,
+                    end: upwards ? 2 * M_PI : M_PI,
                     clockwise: true)
         s.fillColor = clear
 
-        if(points.1.x > points.0.x) {
-            if(up) {
+        if points.1.x > points.0.x {
+            if upwards {
                 s.strokeEnd = 0.0
             } else {
                 s.strokeStart = 1.0
             }
         } else {
-            if(up) {
+            if upwards {
                 s.strokeStart = 1.0
             } else {
                 s.strokeEnd = 0.0
             }
         }
 
-        if(up) {
+        if upwards {
             s.strokeColor = C4Pink
         }
         ShapeLayer.disableActions = false

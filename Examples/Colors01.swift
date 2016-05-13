@@ -59,7 +59,7 @@ class Colors01: CanvasController {
     func defaultColors(frame: Rect) {
         generateRect(frame, text: "Default")
     }
-    
+
     func c4Colors(frame: Rect) {
         let shape = generateRect(frame, text: "C4")
         shape.fillColor = C4Pink
@@ -77,19 +77,19 @@ class Colors01: CanvasController {
         shape.fillColor = Color(red: 0.75, green:0.0, blue:0.0, alpha:1.0) //half red
         shape.strokeColor = Color(red: 0.50, green:1.0, blue:0.0, alpha:1.0) //lime
     }
-    
+
     func hsbColors(frame: Rect) {
         let shape = generateRect(frame, text: "HSB")
         shape.fillColor = Color(hue: 0.25, saturation: 0.75, brightness: 0.5, alpha: 1.0)
         shape.strokeColor = Color(hue: 0.5, saturation: 1.0, brightness: 1.0, alpha: 1.0)
     }
-    
+
     func patternColors(frame: Rect) {
         let shape = generateRect(frame, text: "Patterns")
         shape.fillColor = Color("pattern2")
         shape.strokeColor = Color("pattern1")
     }
-    
+
     func alphaColors(frame: Rect) {
         let shape = generateRect(frame, text: "Alpha")
         shape.fillColor = shape.fillColor?.colorWithAlpha(0.5)

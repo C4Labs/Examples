@@ -19,7 +19,7 @@
 
 import C4
 
-class Images01 : CanvasController {
+class Images01: CanvasController {
     override func setup() {
         let img = Image("chop")!
         img.constrainsProportions = true

@@ -20,9 +20,9 @@
 import C4
 
 class AudioPlayer03: CanvasController {
-    
+
     let audioPlayer = AudioPlayer("C4Loop.aif")!
-    
+
     override func setup() {
         let font = Font(name: "Helvetica", size: 30.0)!
         //create text shape to display duration of mp3

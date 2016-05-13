@@ -22,7 +22,7 @@ import UIKit
 
 class Colors08: CanvasController {
     override func setup() {
-        let f = Rect(0,0,200,200)
+        let f = Rect(0, 0, 200, 200)
         let rect = Rectangle(frame: f)
         rect.lineWidth = 50.0
         rect.center = canvas.center
@@ -32,4 +32,3 @@ class Colors08: CanvasController {
         rect.fillColor = Color("pattern2")
     }
 }
-

@@ -24,7 +24,7 @@ class Shapes11: CanvasController {
     var poly1: Polygon!
     var poly2: Polygon!
     var poly3: Polygon!
-    
+
     override func setup() {
         self.createAndStylePolygons()
         self.createLabels()
@@ -34,7 +34,7 @@ class Shapes11: CanvasController {
         poly2.lineJoin = .Round
         poly3.lineJoin = .Bevel
     }
-    
+
     func createAndStylePolygons() {
         //the base width for the polygons
         let base = 125.0
@@ -65,7 +65,7 @@ class Shapes11: CanvasController {
         self.canvas.add(poly2)
         self.canvas.add(poly3)
     }
-    
+
     func createLabels() {
         let f = Font(name: "Helvetica", size:30.0)!
 

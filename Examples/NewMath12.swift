@@ -31,15 +31,15 @@ class NewMath12: CanvasController {
         let path = MathComparePaths(frame: canvas.frame, insetFrame: insetFrame, points: mainPoints, modifiedPoints: modifiedPoints)
         canvas.add(path)
     }
-    
+
     func createPoints() {
         var x = 0.0
         repeat {
             var y = sin(x * 2 * M_PI)
             let mappedY = min(y, 0.5) * -1
             y *= -1.0
-            modifiedPoints.append(Point(x,mappedY))
-            mainPoints.append(Point(x,y))
+            modifiedPoints.append(Point(x, mappedY))
+            mainPoints.append(Point(x, y))
             x += 0.001
         } while x < 1
     }

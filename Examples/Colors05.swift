@@ -55,20 +55,18 @@ class Colors05: CanvasController {
     }
 
     func setupLabels() {
-        let f = Font(name: "Helvetica" , size: 30.0)!
-        var l:TextShape!
-
-        l = TextShape(text: "{HSBA} : {0.0, 1.0, 1.0, 1.0}", font: f)
+        let f = Font(name: "Helvetica", size: 30.0)!
+        var l = TextShape(text: "{HSBA} : {0.0, 1.0, 1.0, 1.0}", font: f)!
         l.fillColor = white
         l.center = red.center
         self.canvas.add(l)
 
-        l = TextShape(text: "{HSBA} : {0.33, 1.0, 0, 1.0}", font: f)
+        l = TextShape(text: "{HSBA} : {0.33, 1.0, 0, 1.0}", font: f)!
         l.fillColor = white
         l.center = green.center
         self.canvas.add(l)
 
-        l = TextShape(text: "{HSBA} : {0.66, 1.0, 1.0, 1.0}", font: f)
+        l = TextShape(text: "{HSBA} : {0.66, 1.0, 1.0, 1.0}", font: f)!
         l.fillColor = white
         l.center = blue.center
         self.canvas.add(l)

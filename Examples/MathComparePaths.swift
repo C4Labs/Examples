@@ -20,21 +20,21 @@
 import C4
 import UIKit
 
-class MathComparePaths : View {
-    
-    var whitePath : Shape?
-    var grayPath : Shape?
-    var maskPath : Shape?
-    var button : Shape?
-    var gradient : Gradient?
-    
-    var mainPoints : [Point]?
-    var modifiedPoints : [Point]?
+class MathComparePaths: View {
+
+    var whitePath: Shape?
+    var grayPath: Shape?
+    var maskPath: Shape?
+    var button: Shape?
+    var gradient: Gradient?
+
+    var mainPoints: [Point]?
+    var modifiedPoints: [Point]?
     var distances = [0.0]
     var totalDistance = 0.0
     var dIndex = 0.0
     var insetFrame = Rect()
-    
+
     convenience init(frame: Rect, insetFrame: Rect, points: [Point], modifiedPoints: [Point]) {
         self.init()
         self.frame = frame
@@ -55,7 +55,7 @@ class MathComparePaths : View {
         self.add(grayPath)
         self.add(button)
     }
-    
+
     func transformPoints() {
         assert(mainPoints != nil, "mainPoints couldn't be extracted")
 
@@ -67,7 +67,7 @@ class MathComparePaths : View {
             modifiedPoints![i].transform(t)
         }
     }
-    
+
     func calculateDistances() {
         if let mp = modifiedPoints {
             var prev = mp.first!
@@ -83,17 +83,17 @@ class MathComparePaths : View {
             totalDistance = distances.last!
         }
     }
-    
+
     func createGradient() {
         let gr = Gradient(frame: frame)
-        gr.colors = [C4Blue,C4Purple]
-        gr.locations = [0,1]
-        gr.startPoint = Point(insetFrame.origin.x/width,0)
-        gr.endPoint = Point(insetFrame.max.x/width,0)
+        gr.colors = [C4Blue, C4Purple]
+        gr.locations = [0, 1]
+        gr.startPoint = Point(insetFrame.origin.x/width, 0)
+        gr.endPoint = Point(insetFrame.max.x/width, 0)
         gradient = gr
         gradient?.layer?.mask = maskPath?.layer
     }
-    
+
     func createMaskPath() {
         let mp = Polygon(modifiedPoints!)
         mp.lineWidth = 35.0
@@ -101,7 +101,7 @@ class MathComparePaths : View {
         mp.strokeEnd = 0.00001
         maskPath = mp
     }
-    
+
     func createWhitePath() {
         let wp = Polygon(modifiedPoints!)
         wp.lineWidth = 2.0
@@ -110,7 +110,7 @@ class MathComparePaths : View {
         wp.opacity = 0.15
         whitePath = wp
     }
-    
+
     func createGrayPath() {
         let gp = Polygon(mainPoints!)
         gp.lineWidth = 3.0
@@ -119,18 +119,16 @@ class MathComparePaths : View {
         gp.opacity = 0.1
         grayPath = gp
     }
-    
+
     func createButton() {
         var s = Shadow()
-        s.opacity = 1.0
-        s.offset = Size(0,2)
+        s.offset = Size(0, 2)
         s.radius = 1
         s.opacity = 0.5
 
-        let b = Circle(center: Point(), radius: 15)
+        let b = Circle(center: modifiedPoints!.first!, radius: 15)
         b.fillColor = white
         b.strokeColor = clear
-        b.center = modifiedPoints!.first!
         b.shadow = s
 
         let kfa = CAKeyframeAnimation()
@@ -139,7 +137,6 @@ class MathComparePaths : View {
         kfa.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)]
         b.layer?.addAnimation(kfa, forKey: "position")
         b.layer?.speed = 0.0
-        b.layer?.timeOffset = 0.0
         button = b
 
         button?.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
@@ -147,15 +144,14 @@ class MathComparePaths : View {
                 print("Could not extract button")
                 return
             }
-    
+
             ShapeLayer.disableActions = true
-            var converted = self.convert(location, from: b)
-            converted.x -= self.insetFrame.origin.x
-            converted.x = clamp(converted.x, min: 0, max: self.insetFrame.size.width-0.01)
-            converted.x /= self.insetFrame.size.width
-            let index = Int(converted.x * 100.0 * self.dIndex)
-            b.layer?.timeOffset = CFTimeInterval(clamp(converted.x, min: 0, max: 1.0))
-    
+            var x = self.convert(location, from: b).x - self.insetFrame.origin.x
+            x = clamp(x, min: 0, max: self.insetFrame.size.width-0.01)
+            x /= self.insetFrame.size.width
+            let index = Int(x * 100.0 * self.dIndex)
+            b.layer?.timeOffset = CFTimeInterval(clamp(x, min: 0, max: 1.0))
+
             self.maskPath?.strokeEnd = clamp(self.distances[index]/self.totalDistance, min: 0.00001, max: 1.0)
 
             if state == .Ended {

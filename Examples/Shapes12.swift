@@ -24,25 +24,14 @@ class Shapes12: CanvasController {
     override func setup() {
         //first shape will animate the start to the end
         let dx = Vector(x: canvas.width/4.0, y: 0)
-        let start = Circle(center: canvas.center - dx, radius: 50)
-        start.lineWidth = 30.0
-        start.fillColor = clear
-        canvas.add(start)
+        let start = createShape(canvas.center - dx, color: C4Blue)
 
         //second shape will animate the end to the start
-        let end = Circle(center: canvas.center, radius: 50)
-        end.strokeColor = C4Blue
-        end.lineWidth = 30.0
-        end.fillColor = clear
-        canvas.add(end)
+        let end = createShape(canvas.center, color: C4Purple)
 
         //third shape will animate the start and end to a mid-point
-        let both = Circle(center: canvas.center + dx, radius: 50)
-        both.lineWidth = 30.0
-        both.strokeColor = C4Pink
-        both.fillColor = clear
-        self.canvas.add(both)
-       
+        let both = createShape(canvas.center + dx, color: C4Pink)
+
         let a = ViewAnimation(duration:2.0) {
             start.strokeStart = 1
         }
@@ -64,5 +53,14 @@ class Shapes12: CanvasController {
 
         let grp = ViewAnimationGroup(animations: [a, b, c])
         grp.animate()
+    }
+
+    func createShape(center: Point, color: Color) -> Shape {
+        let shape = Circle(center: center, radius: 50)
+        shape.lineWidth = 30.0
+        shape.strokeColor = color
+        shape.fillColor = clear
+        canvas.add(shape)
+        return shape
     }
 }

@@ -52,7 +52,7 @@ class Shapes17: CanvasController {
             rect.lineDashPhase = self.canvas.width
             star.lineDashPhase = self.canvas.width
         }
-        
+
         anim.autoreverses = true
         anim.repeats = true
         anim.animate()

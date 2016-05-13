@@ -20,10 +20,10 @@
 import C4
 import UIKit
 
-class Shapes06 : CanvasController {
+class Shapes06: CanvasController {
     override func setup() {
         //create a variable rect
-        var f = Rect(0,0,200,200)
+        var f = Rect(0, 0, 200, 200)
 
         //position the frame, create the default shape
         f.center = Point(canvas.width/3, canvas.center.y)

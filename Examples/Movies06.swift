@@ -34,7 +34,7 @@ class Movies06: CanvasController {
         let g = Gradient(frame: gray.bounds)
         g.colors = [clear, white]
         g.locations = [0, 0.5]
-        g.endPoint = Point(1,1)
+        g.endPoint = Point(1, 1)
         gray.mask = g
 
         canvas.add(color)

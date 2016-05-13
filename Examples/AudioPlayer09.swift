@@ -21,7 +21,6 @@ import C4
 
 class AudioPlayer09: CanvasController {
     let audioPlayer = AudioPlayer("C4Loop.aif")!
-    var meterUpdateTimer:NSTimer!
     var avgL, avgR, peakL, peakR: Line!
 
     override func setup() {
@@ -30,6 +29,15 @@ class AudioPlayer09: CanvasController {
         audioPlayer.meteringEnabled = true
         audioPlayer.play()
 
+        createMeterLines()
+
+        let t = Timer(interval: 1/30.0) {
+            self.updateMeters()
+        }
+        t.start()
+    }
+
+    func createMeterLines() {
         let dx = Vector(x: canvas.width/4.0, y: 0)
 
         var points = (Point(0, canvas.height), Point())
@@ -66,13 +74,8 @@ class AudioPlayer09: CanvasController {
         canvas.add(avgR)
         canvas.add(peakL)
         canvas.add(peakR)
-
-        let t = Timer(interval: 1/30.0) {
-            self.updateMeters()
-        }
-        t.start()
     }
-    
+
     func updateMeters() {
         ShapeLayer.disableActions = true
         audioPlayer.updateMeters()

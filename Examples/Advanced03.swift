@@ -23,11 +23,11 @@ class Advanced03: CanvasController {
     var shapes = [Shape]()
     override func setup() {
         for i in 0..<25 {
-            let s = Rectangle(frame: Rect(0,0,self.canvas.height,16))
+            let s = Rectangle(frame: Rect(0, 0, self.canvas.height, 16))
             s.opacity = Double(i + 10)/40
             s.lineWidth = 0.0
 
-            s.anchorPoint = Point(0.5,Double(i))
+            s.anchorPoint = Point(0.5, Double(i))
             s.center = canvas.center
             shapes.append(s)
             canvas.add(s)

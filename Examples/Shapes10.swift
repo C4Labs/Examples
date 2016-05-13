@@ -26,11 +26,11 @@ class Shapes10: CanvasController {
         self.setupGridLines()
         self.setupLabels()
     }
-    
+
     func setupLines() {
         //create and style the first line (no need to set the lineCap because we show the default here)
         let dy = Vector(x: 0, y: canvas.height/4.0)
-        var points = (Point(canvas.width/4,0) + dy, Point(canvas.width*3/4,0) + dy)
+        var points = (Point(canvas.width/4, 0) + dy, Point(canvas.width*3/4, 0) + dy)
 
         let line1 = Line(points)
         line1.lineWidth = 30.0
@@ -56,7 +56,7 @@ class Shapes10: CanvasController {
         self.canvas.add(line2)
         self.canvas.add(line3)
     }
-    
+
     func setupGridLines() {
         //set the points for the first grid line
         var points = (Point(canvas.width/4, 0), Point(canvas.width/4, canvas.height))
@@ -78,7 +78,7 @@ class Shapes10: CanvasController {
         self.canvas.add(gridLine1)
         self.canvas.add(gridLine2)
     }
-    
+
     func setupLabels() {
         //create a font to use for all the labels
         let f = Font(name: "Helvetica", size:20)!

@@ -23,7 +23,7 @@ class Views10: CanvasController {
     override func setup() {
         let c = Circle(center: canvas.center, radius: 100)
         canvas.add(c)
-        
+
         canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
             c.center = center
         }

@@ -47,5 +47,4 @@ class Shapes16: CanvasController {
         a.autoreverses = true
         a.animate()
     }
-    
 }

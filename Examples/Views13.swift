@@ -24,7 +24,7 @@ class Views13: CanvasController {
         canvas.backgroundColor = white
         let points = [Point(), Point(canvas.center.x, 0), Point(0, canvas.center.y), canvas.center]
         for p in points {
-            let r = Rectangle(frame: Rect(p, Size(canvas.width/2,canvas.height/2)))
+            let r = Rectangle(frame: Rect(p, Size(canvas.width/2, canvas.height/2)))
             if p != points.first && p != points.last {
                 r.fillColor = C4Pink
             }

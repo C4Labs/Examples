@@ -21,7 +21,7 @@ import C4
 import UIKit
 
 class Colors04: CanvasController {
-    
+
     var red, green, blue: Shape!
 
     override func setup() {
@@ -32,7 +32,7 @@ class Colors04: CanvasController {
         green.fillColor = Color(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         blue.fillColor  = Color(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     }
-    
+
     func setupShapes() {
         let frame = Rect(0, 0, canvas.width*0.9, canvas.height/5)
 
@@ -53,24 +53,22 @@ class Colors04: CanvasController {
         canvas.add(green)
         canvas.add(blue)
     }
-    
+
     func setupLabels() {
-        let f = Font(name: "Helvetica" , size: 30.0)!
-        var l:TextShape!
-
-        l = TextShape(text: "{RGBA} : {1.0, 0, 0, 1.0}", font: f)
+        let f = Font(name: "Helvetica", size: 30.0)!
+        var l = TextShape(text: "{RGBA} : {1.0, 0, 0, 1.0}", font: f)!
         l.fillColor = white
-        l.center = red.center;
+        l.center = red.center
         canvas.add(l)
 
-        l = TextShape(text: "{RGBA} : {0, 1.0, 0, 1.0}", font: f)
+        l = TextShape(text: "{RGBA} : {0, 1.0, 0, 1.0}", font: f)!
         l.fillColor = white
-        l.center = green.center;
+        l.center = green.center
         canvas.add(l)
 
-        l = TextShape(text: "{RGBA} : {0, 0, 1.0, 1.0}", font: f)
+        l = TextShape(text: "{RGBA} : {0, 0, 1.0, 1.0}", font: f)!
         l.fillColor = white
-        l.center = blue.center;
+        l.center = blue.center
         canvas.add(l)
     }
 }

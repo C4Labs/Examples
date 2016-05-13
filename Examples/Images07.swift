@@ -31,7 +31,7 @@ class Images07: CanvasController {
             //color each pixel in that row
             for _ in 0..<Int(canvas.width) {
                 //create a pixel from a random color in our set
-//                rawData.append(Pixel(colors[random(below: 4)]))
+                rawData.append(Pixel(colors[random(below: 4)]))
             }
         }
 

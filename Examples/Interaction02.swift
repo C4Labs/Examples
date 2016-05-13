@@ -40,5 +40,3 @@ class Interaction02: CanvasController {
         shape.strokeColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
     }
 }
-
-

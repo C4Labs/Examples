@@ -26,9 +26,9 @@ class Fonts01: CanvasController {
         label.center = Point(canvas.center.x, canvas.height/3)
 
         //use the initial font to create a new font with a bigger size
-        let f = Font(name: "helvetica", size: 30.0)!
+        let f = Font(name: "Helvetica", size: 30.0)!
         let smallLabel = TextShape(text: "Small Font", font: f)!
-        smallLabel.center = Point(canvas.center.x, canvas.height*2/3);
+        smallLabel.center = Point(canvas.center.x, canvas.height*2/3)
 
         //add the labels to the canvas
         self.canvas.add(label)

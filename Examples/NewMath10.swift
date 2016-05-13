@@ -29,17 +29,17 @@ class NewMath10: CanvasController {
         insetFrame = inset(canvas.frame, dx: margin, dy: margin)
         createPoints()
         let path = MathComparePaths(frame: canvas.frame, insetFrame: insetFrame, points: mainPoints, modifiedPoints: modifiedPoints)
-        
+
         canvas.add(path)
     }
-    
+
     func createPoints() {
         var x = 0.0
         repeat {
             let y = sin(x * 2 * M_PI) * -1//-1 inverts from iOS coordinates to normal cartesian
             let my = map(y, min: -1, max: 1, toMin: -1, toMax: 0) //same as above
-            modifiedPoints.append(Point(x,my))
-            mainPoints.append(Point(x,y))
+            modifiedPoints.append(Point(x, my))
+            mainPoints.append(Point(x, y))
             x += 0.001
         } while x < 1
     }

@@ -20,7 +20,7 @@
 import C4
 
 class Interaction03: CanvasController {
-    
+
     override func setup() {
         let c = Circle(center: canvas.center, radius: canvas.height/3)
         c.lineWidth = 40.0
