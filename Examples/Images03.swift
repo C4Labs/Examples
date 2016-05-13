@@ -20,31 +20,24 @@
 import C4
 import UIKit
 
-class Views13: CanvasController {
+class Images03: CanvasController {
     override func setup() {
-        let dx = Vector(x: canvas.width/4, y: 0)
+        let chop = Image("chop")!
+        let rockies = Image("rockies")!
 
-        let c1 = Circle(center: canvas.center - dx, radius: 66)
-        let c2 = Circle(center: canvas.center, radius: 66)
-        let c3 = Circle(center: canvas.center + dx, radius: 66)
+        let visibleImage = Image(c4image: chop)
+        visibleImage.constrainsProportions = true
+        visibleImage.width = canvas.width
+        canvas.add(visibleImage)
 
-        c1.shadow.opacity = 0.8
-        c2.shadow.opacity = 0.8
-        c3.shadow.opacity = 0.8
-
-        c1.shadow.offset = Size(10, 10)
-        c2.shadow.offset = Size(16, 20)
-        c3.shadow.offset = Size(22, 28)
-
-        c1.shadow.radius = 3.0
-        c2.shadow.radius = 6.0
-        c3.shadow.radius = 9.0
-
-        c2.shadow.color = C4Pink
-        c3.shadow.color = C4Blue
-
-        canvas.add(c1)
-        canvas.add(c2)
-        canvas.add(c3)
+        var isFirst = true
+        canvas.addTapGestureRecognizer { (center, location, state) -> () in
+            if isFirst {
+                visibleImage.contents = rockies.contents
+            } else {
+                visibleImage.contents = chop.contents
+            }
+            isFirst = !isFirst
+        }
     }
 }

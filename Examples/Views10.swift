@@ -21,11 +21,10 @@ import C4
 
 class Views10: CanvasController {
     override func setup() {
-        let c = Circle(center: canvas.center, radius: 100)
-        canvas.add(c)
+        let img = Image("chop")!
+        img.center = canvas.center
+        canvas.add(img)
 
-        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
-            c.center = center
-        }
+        img.mask = Circle(center: img.bounds.center, radius: img.height/2)
     }
 }

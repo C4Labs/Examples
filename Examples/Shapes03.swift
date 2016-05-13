@@ -17,34 +17,35 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import C4
 import UIKit
+import C4
 
-class Views13: CanvasController {
+class Shapes03: CanvasController {
     override func setup() {
-        let dx = Vector(x: canvas.width/4, y: 0)
+        let dy = Vector(x: 0, y: 2.0)
 
-        let c1 = Circle(center: canvas.center - dx, radius: 66)
-        let c2 = Circle(center: canvas.center, radius: 66)
-        let c3 = Circle(center: canvas.center + dx, radius: 66)
+        //create and array of points to use for lines
+        var points = (Point()-dy, Point(canvas.width, 0.0)-dy)
 
-        c1.shadow.opacity = 0.8
-        c2.shadow.opacity = 0.8
-        c3.shadow.opacity = 0.8
+        //figure out the total number of lines to draw
+        let totalLineCount = self.canvas.height / 2.0 //default line width of 1.0
 
-        c1.shadow.offset = Size(10, 10)
-        c2.shadow.offset = Size(16, 20)
-        c3.shadow.offset = Size(22, 28)
+        //figure out displacement of strokeStart and strokeEnd
+        let strokeDisplacement = 0.5 / totalLineCount
 
-        c1.shadow.radius = 3.0
-        c2.shadow.radius = 6.0
-        c3.shadow.radius = 9.0
+        for i in 0..<Int(totalLineCount) {
+            points.0 += dy
+            points.1 += dy
 
-        c2.shadow.color = C4Pink
-        c3.shadow.color = C4Blue
+            //create a new line
+            let newLine = Line(points)
 
-        canvas.add(c1)
-        canvas.add(c2)
-        canvas.add(c3)
+            //determine the current displacement of the ends of the line
+            let ds = strokeDisplacement*Double(i)
+            newLine.strokeStart = 0.5 - ds
+            newLine.strokeEnd = 0.5 + ds
+
+            self.canvas.add(newLine)
+        }
     }
 }

@@ -18,17 +18,13 @@
 // IN THE SOFTWARE.
 
 import C4
-import UIKit
 
 class Colors08: CanvasController {
     override func setup() {
-        let f = Rect(0, 0, 200, 200)
-        let rect = Rectangle(frame: f)
-        rect.lineWidth = 50.0
-        rect.center = canvas.center
-        canvas.add(rect)
-
-        rect.strokeColor = Color("pattern1")
-        rect.fillColor = Color("pattern2")
+        let circle = Circle(center: self.canvas.center, radius: 100)
+        circle.fillColor = Color(0xFF3300)
+        circle.strokeColor = Color(0x3366FF)
+        circle.lineWidth = 50.0
+        canvas.add(circle)
     }
 }

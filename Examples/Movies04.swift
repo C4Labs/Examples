@@ -21,27 +21,23 @@ import C4
 
 class Movies04: CanvasController {
     override func setup() {
-        //create a movie and play it automatically
-        let movie = Movie("halo.mp4")!
-        movie.height = canvas.height
-        movie.center = canvas.center
-        movie.play()
-        canvas.add(movie)
+        let color = Movie("halo.mp4")!
+        let gray = Movie("haloGray.mp4")!
 
-        canvas.addTapGestureRecognizer { locations, center, state in
-            let a = ViewAnimation(duration: 0.5) {
-                movie.width = 50.0
-                movie.center = self.canvas.center
-            }
+        color.frame = canvas.frame
+        color.play()
 
-            a.autoreverses = true
+        gray.frame = canvas.frame
+        gray.muted = true
+        gray.play()
 
-            a.addCompletionObserver {
-                movie.width = self.canvas.width
-                movie.center = self.canvas.center
-            }
+        let g = Gradient(frame: gray.bounds)
+        g.colors = [clear, white]
+        g.locations = [0, 0.5]
+        g.endPoint = Point(1, 1)
+        gray.mask = g
 
-            a.animate()
-        }
+        canvas.add(color)
+        canvas.add(gray)
     }
 }

@@ -20,31 +20,27 @@
 import C4
 import UIKit
 
-class Views13: CanvasController {
+class Math03: CanvasController {
+    var mainPoints = [Point]()
+    var modifiedPoints = [Point]()
+    var insetFrame = Rect()
     override func setup() {
-        let dx = Vector(x: canvas.width/4, y: 0)
+        let margin = canvas.frame.size.height * 0.1
+        insetFrame = inset(canvas.frame, dx: margin, dy: margin)
+        createPoints()
+        let path = MathComparePaths(frame: canvas.frame, insetFrame: insetFrame, points: mainPoints, modifiedPoints: modifiedPoints)
+        canvas.add(path)
+    }
 
-        let c1 = Circle(center: canvas.center - dx, radius: 66)
-        let c2 = Circle(center: canvas.center, radius: 66)
-        let c3 = Circle(center: canvas.center + dx, radius: 66)
-
-        c1.shadow.opacity = 0.8
-        c2.shadow.opacity = 0.8
-        c3.shadow.opacity = 0.8
-
-        c1.shadow.offset = Size(10, 10)
-        c2.shadow.offset = Size(16, 20)
-        c3.shadow.offset = Size(22, 28)
-
-        c1.shadow.radius = 3.0
-        c2.shadow.radius = 6.0
-        c3.shadow.radius = 9.0
-
-        c2.shadow.color = C4Pink
-        c3.shadow.color = C4Blue
-
-        canvas.add(c1)
-        canvas.add(c2)
-        canvas.add(c3)
+    func createPoints() {
+        var x = -1.0
+        repeat {
+            let y = asin(x)
+            let mappedX = map(x, min: -1, max: 1, toMin: 0, toMax: 1)
+            let mappedY = map(y, min: 0, max: M_PI_2, toMin: 0, toMax: 1) * -1.0
+            modifiedPoints.append(Point(mappedX, mappedY))
+            mainPoints.append(Point(mappedX, mappedY))
+            x += 0.002
+        } while x < 1
     }
 }
