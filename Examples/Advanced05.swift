@@ -12,34 +12,67 @@ import UIKit
 
 class Advanced05: CanvasController {
     override func setup() {
+        var bottom = [Circle]()
+        var middle = [Circle]()
+        var top = [Circle]()
 
+        for _ in 1...30 {
+            let r = Double(random(min: 8, max: 16))
 
-        let bigCircle = Circle(center: self.canvas.center, radius: 100)
-        bigCircle.strokeColor = Color(UIColor.clearColor())
-        self.canvas.add(bigCircle)
-        for _ in 1...50 {
-            self.makeCircle()
+            bottom.append(Circle(center: canvas.center, radius: r * 2))
+            middle.append(Circle(center: canvas.center, radius: r * 1.5))
+            top.append(Circle(center: canvas.center, radius: r))
+
+            for c in bottom {
+                c.lineWidth = 0
+                c.fillColor = C4Pink
+                canvas.add(c)
+            }
+
+            for c in middle {
+                c.lineWidth = 0
+                canvas.add(c)
+            }
+
+            for c in top {
+                c.lineWidth = 0
+                c.fillColor = C4Purple
+                canvas.add(c)
+            }
+        }
+
+        wait(1.0) {
+            for i in 0..<bottom.count {
+                self.move((bottom[i], middle[i], top[i]))
+            }
         }
     }
-    
-    
-    func makeCircle() {
-        let circle = Circle(center: self.canvas.center, radius: 2)
-        self.canvas.add(circle)
-        newPlace(circle)
-    }
-    
-    func newPlace(sender: Shape) {
-        let time = random01()*5
-        let a = ViewAnimation(duration:time) {
-            let r = Double(random(min: 50, max: 100))
-            let theta = degToRad(random01()*360)
-            sender.center = Point((r*cos(theta)) + (self.canvas.width/2), (r*sin(theta)) + (self.canvas.height/2))
+
+    func move(shapes: (Circle, Circle, Circle)) {
+        let d = random01()*3 + 1
+        let r = (180 - shapes.0.width/2) * random01()
+        let 𝝧 = random01() * 2 * M_PI
+        let point = Point(r * cos(𝝧), r * sin(𝝧)) + Vector(canvas.center)
+
+        let b = ViewAnimation(duration: d) {
+            shapes.0.center = point
         }
-        a.animate()
-        wait(time) {
-            self.newPlace(sender)
+        b.delay = 0.05
+        b.addCompletionObserver {
+            wait(random01()) {
+                self.move(shapes)
+            }
         }
+        let m = ViewAnimation(duration: d) {
+            shapes.1.center = point
+        }
+        m.delay = 0.025
+        let t = ViewAnimation(duration: d) {
+            shapes.2.center = point
+        }
+
+        let group = ViewAnimationGroup(animations: [b,m,t])
+        group.animate()
     }
 }
 

@@ -45,6 +45,7 @@ class MathComparePaths : View {
         self.add(whitePath)
         self.add(grayPath)
         self.add(button)
+
     }
     
     func transformPoints() {
@@ -138,15 +139,13 @@ class MathComparePaths : View {
         b.layer?.timeOffset = 0.0
         button = b
 
-
         button?.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            ShapeLayer.disableActions = true
             guard let b = self.button else {
                 print("Could not extract button")
                 return
             }
     
-
+            ShapeLayer.disableActions = true
             var converted = self.convert(location, from: b)
             converted.x -= self.insetFrame.origin.x
             converted.x = clamp(converted.x, min: 0, max: self.insetFrame.size.width-0.01)

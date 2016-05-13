@@ -13,10 +13,12 @@ class NewMath01: CanvasController {
     var mainPoints = [Point]()
     var modifiedPoints = [Point]()
     var insetFrame = Rect()
+
     override func setup() {
         let margin = canvas.frame.size.height * 0.1
         insetFrame = inset(canvas.frame, dx: margin, dy: margin)
         createPoints()
+        
         let path = MathComparePaths(frame: canvas.frame, insetFrame: insetFrame, points: mainPoints, modifiedPoints: modifiedPoints)
         canvas.add(path)
     }

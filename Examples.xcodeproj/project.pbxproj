@@ -15,10 +15,7 @@
 		1F4D29881CE266A700C02C6E /* Advanced01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F71CE266A700C02C6E /* Advanced01.swift */; };
 		1F4D29891CE266A700C02C6E /* Advanced02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F81CE266A700C02C6E /* Advanced02.swift */; };
 		1F4D298A1CE266A700C02C6E /* Advanced03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F91CE266A700C02C6E /* Advanced03.swift */; };
-		1F4D298B1CE266A700C02C6E /* Advanced04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FA1CE266A700C02C6E /* Advanced04.swift */; };
 		1F4D298C1CE266A700C02C6E /* Advanced05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FB1CE266A700C02C6E /* Advanced05.swift */; };
-		1F4D298D1CE266A700C02C6E /* Advanced06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FC1CE266A700C02C6E /* Advanced06.swift */; };
-		1F4D298E1CE266A700C02C6E /* Advanced07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FD1CE266A700C02C6E /* Advanced07.swift */; };
 		1F4D298F1CE266A700C02C6E /* AudioPlayer01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FE1CE266A700C02C6E /* AudioPlayer01.swift */; };
 		1F4D29901CE266A700C02C6E /* AudioPlayer02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FF1CE266A700C02C6E /* AudioPlayer02.swift */; };
 		1F4D29911CE266A700C02C6E /* AudioPlayer03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29001CE266A700C02C6E /* AudioPlayer03.swift */; };
@@ -57,22 +54,6 @@
 		1F4D29BA1CE266A700C02C6E /* Interaction03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29291CE266A700C02C6E /* Interaction03.swift */; };
 		1F4D29BB1CE266A700C02C6E /* Interaction04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292A1CE266A700C02C6E /* Interaction04.swift */; };
 		1F4D29C01CE266A700C02C6E /* Interaction10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D292F1CE266A700C02C6E /* Interaction10.swift */; };
-		1F4D29C11CE266A700C02C6E /* Math01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29301CE266A700C02C6E /* Math01.swift */; };
-		1F4D29C21CE266A700C02C6E /* Math02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29311CE266A700C02C6E /* Math02.swift */; };
-		1F4D29C31CE266A700C02C6E /* Math03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29321CE266A700C02C6E /* Math03.swift */; };
-		1F4D29C41CE266A700C02C6E /* Math04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29331CE266A700C02C6E /* Math04.swift */; };
-		1F4D29C51CE266A700C02C6E /* Math05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29341CE266A700C02C6E /* Math05.swift */; };
-		1F4D29C61CE266A700C02C6E /* Math06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29351CE266A700C02C6E /* Math06.swift */; };
-		1F4D29C71CE266A700C02C6E /* Math07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29361CE266A700C02C6E /* Math07.swift */; };
-		1F4D29C81CE266A700C02C6E /* Math08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29371CE266A700C02C6E /* Math08.swift */; };
-		1F4D29C91CE266A700C02C6E /* Math09.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29381CE266A700C02C6E /* Math09.swift */; };
-		1F4D29CA1CE266A700C02C6E /* Math10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29391CE266A700C02C6E /* Math10.swift */; };
-		1F4D29CB1CE266A700C02C6E /* Math11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293A1CE266A700C02C6E /* Math11.swift */; };
-		1F4D29CC1CE266A700C02C6E /* Math12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293B1CE266A700C02C6E /* Math12.swift */; };
-		1F4D29CD1CE266A700C02C6E /* Math13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293C1CE266A700C02C6E /* Math13.swift */; };
-		1F4D29CE1CE266A700C02C6E /* Math14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293D1CE266A700C02C6E /* Math14.swift */; };
-		1F4D29CF1CE266A700C02C6E /* Math15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293E1CE266A700C02C6E /* Math15.swift */; };
-		1F4D29D01CE266A700C02C6E /* Math16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D293F1CE266A700C02C6E /* Math16.swift */; };
 		1F4D29D11CE266A700C02C6E /* MathComparePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29401CE266A700C02C6E /* MathComparePaths.swift */; };
 		1F4D29D21CE266A700C02C6E /* Movies01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29411CE266A700C02C6E /* Movies01.swift */; };
 		1F4D29D31CE266A700C02C6E /* Movies02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29421CE266A700C02C6E /* Movies02.swift */; };
@@ -129,6 +110,7 @@
 		1F4D2A191CE2670F00C02C6E /* C4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4D28ED1CE2663700C02C6E /* C4.framework */; };
 		1F4D2A1A1CE2670F00C02C6E /* C4.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4D28ED1CE2663700C02C6E /* C4.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F4D2A2D1CE3378700C02C6E /* Views23.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D2A2C1CE3378700C02C6E /* Views23.swift */; };
+		1FEA7BA41CE5B00E0048221B /* Advanced06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7BA31CE5B00E0048221B /* Advanced06.swift */; };
 		D9A1FE0C1CE3C73100FB7902 /* C4Loop.aif in Resources */ = {isa = PBXBuildFile; fileRef = D9A1FE091CE3C73100FB7902 /* C4Loop.aif */; };
 		D9A1FE0D1CE3C73100FB7902 /* halo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9A1FE0A1CE3C73100FB7902 /* halo.mp4 */; };
 		D9A1FE0E1CE3C73100FB7902 /* haloGray.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9A1FE0B1CE3C73100FB7902 /* haloGray.mp4 */; };
@@ -191,10 +173,7 @@
 		1F4D28F71CE266A700C02C6E /* Advanced01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced01.swift; sourceTree = "<group>"; };
 		1F4D28F81CE266A700C02C6E /* Advanced02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced02.swift; sourceTree = "<group>"; };
 		1F4D28F91CE266A700C02C6E /* Advanced03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced03.swift; sourceTree = "<group>"; };
-		1F4D28FA1CE266A700C02C6E /* Advanced04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced04.swift; sourceTree = "<group>"; };
 		1F4D28FB1CE266A700C02C6E /* Advanced05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced05.swift; sourceTree = "<group>"; };
-		1F4D28FC1CE266A700C02C6E /* Advanced06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced06.swift; sourceTree = "<group>"; };
-		1F4D28FD1CE266A700C02C6E /* Advanced07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced07.swift; sourceTree = "<group>"; };
 		1F4D28FE1CE266A700C02C6E /* AudioPlayer01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer01.swift; sourceTree = "<group>"; };
 		1F4D28FF1CE266A700C02C6E /* AudioPlayer02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer02.swift; sourceTree = "<group>"; };
 		1F4D29001CE266A700C02C6E /* AudioPlayer03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer03.swift; sourceTree = "<group>"; };
@@ -233,22 +212,6 @@
 		1F4D29291CE266A700C02C6E /* Interaction03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction03.swift; sourceTree = "<group>"; };
 		1F4D292A1CE266A700C02C6E /* Interaction04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction04.swift; sourceTree = "<group>"; };
 		1F4D292F1CE266A700C02C6E /* Interaction10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction10.swift; sourceTree = "<group>"; };
-		1F4D29301CE266A700C02C6E /* Math01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math01.swift; sourceTree = "<group>"; };
-		1F4D29311CE266A700C02C6E /* Math02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math02.swift; sourceTree = "<group>"; };
-		1F4D29321CE266A700C02C6E /* Math03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math03.swift; sourceTree = "<group>"; };
-		1F4D29331CE266A700C02C6E /* Math04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math04.swift; sourceTree = "<group>"; };
-		1F4D29341CE266A700C02C6E /* Math05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math05.swift; sourceTree = "<group>"; };
-		1F4D29351CE266A700C02C6E /* Math06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math06.swift; sourceTree = "<group>"; };
-		1F4D29361CE266A700C02C6E /* Math07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math07.swift; sourceTree = "<group>"; };
-		1F4D29371CE266A700C02C6E /* Math08.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math08.swift; sourceTree = "<group>"; };
-		1F4D29381CE266A700C02C6E /* Math09.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math09.swift; sourceTree = "<group>"; };
-		1F4D29391CE266A700C02C6E /* Math10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math10.swift; sourceTree = "<group>"; };
-		1F4D293A1CE266A700C02C6E /* Math11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math11.swift; sourceTree = "<group>"; };
-		1F4D293B1CE266A700C02C6E /* Math12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math12.swift; sourceTree = "<group>"; };
-		1F4D293C1CE266A700C02C6E /* Math13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math13.swift; sourceTree = "<group>"; };
-		1F4D293D1CE266A700C02C6E /* Math14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math14.swift; sourceTree = "<group>"; };
-		1F4D293E1CE266A700C02C6E /* Math15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math15.swift; sourceTree = "<group>"; };
-		1F4D293F1CE266A700C02C6E /* Math16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math16.swift; sourceTree = "<group>"; };
 		1F4D29401CE266A700C02C6E /* MathComparePaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathComparePaths.swift; sourceTree = "<group>"; };
 		1F4D29411CE266A700C02C6E /* Movies01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies01.swift; sourceTree = "<group>"; };
 		1F4D29421CE266A700C02C6E /* Movies02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies02.swift; sourceTree = "<group>"; };
@@ -303,6 +266,7 @@
 		1F4D297E1CE266A700C02C6E /* Views20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views20.swift; sourceTree = "<group>"; };
 		1F4D29841CE266A700C02C6E /* Views26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views26.swift; sourceTree = "<group>"; };
 		1F4D2A2C1CE3378700C02C6E /* Views23.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views23.swift; sourceTree = "<group>"; };
+		1FEA7BA31CE5B00E0048221B /* Advanced06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced06.swift; sourceTree = "<group>"; };
 		D9A1FE091CE3C73100FB7902 /* C4Loop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = C4Loop.aif; sourceTree = "<group>"; };
 		D9A1FE0A1CE3C73100FB7902 /* halo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = halo.mp4; sourceTree = "<group>"; };
 		D9A1FE0B1CE3C73100FB7902 /* haloGray.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = haloGray.mp4; sourceTree = "<group>"; };
@@ -370,10 +334,8 @@
 				1F4D28F71CE266A700C02C6E /* Advanced01.swift */,
 				1F4D28F81CE266A700C02C6E /* Advanced02.swift */,
 				1F4D28F91CE266A700C02C6E /* Advanced03.swift */,
-				1F4D28FA1CE266A700C02C6E /* Advanced04.swift */,
 				1F4D28FB1CE266A700C02C6E /* Advanced05.swift */,
-				1F4D28FC1CE266A700C02C6E /* Advanced06.swift */,
-				1F4D28FD1CE266A700C02C6E /* Advanced07.swift */,
+				1FEA7BA31CE5B00E0048221B /* Advanced06.swift */,
 				1F4D28FE1CE266A700C02C6E /* AudioPlayer01.swift */,
 				1F4D28FF1CE266A700C02C6E /* AudioPlayer02.swift */,
 				1F4D29001CE266A700C02C6E /* AudioPlayer03.swift */,
@@ -413,22 +375,6 @@
 				1F4D292A1CE266A700C02C6E /* Interaction04.swift */,
 				1F4D29561CE266A700C02C6E /* Interaction05.swift */,
 				1F4D292F1CE266A700C02C6E /* Interaction10.swift */,
-				1F4D29301CE266A700C02C6E /* Math01.swift */,
-				1F4D29311CE266A700C02C6E /* Math02.swift */,
-				1F4D29321CE266A700C02C6E /* Math03.swift */,
-				1F4D29331CE266A700C02C6E /* Math04.swift */,
-				1F4D29341CE266A700C02C6E /* Math05.swift */,
-				1F4D29351CE266A700C02C6E /* Math06.swift */,
-				1F4D29361CE266A700C02C6E /* Math07.swift */,
-				1F4D29371CE266A700C02C6E /* Math08.swift */,
-				1F4D29381CE266A700C02C6E /* Math09.swift */,
-				1F4D29391CE266A700C02C6E /* Math10.swift */,
-				1F4D293A1CE266A700C02C6E /* Math11.swift */,
-				1F4D293B1CE266A700C02C6E /* Math12.swift */,
-				1F4D293C1CE266A700C02C6E /* Math13.swift */,
-				1F4D293D1CE266A700C02C6E /* Math14.swift */,
-				1F4D293E1CE266A700C02C6E /* Math15.swift */,
-				1F4D293F1CE266A700C02C6E /* Math16.swift */,
 				1F4D29401CE266A700C02C6E /* MathComparePaths.swift */,
 				1F4D29411CE266A700C02C6E /* Movies01.swift */,
 				1F4D29421CE266A700C02C6E /* Movies02.swift */,
@@ -604,16 +550,12 @@
 				1F4D29EE1CE266A700C02C6E /* Shapes06.swift in Sources */,
 				1F4D29F11CE266A700C02C6E /* Shapes09.swift in Sources */,
 				1F4D29911CE266A700C02C6E /* AudioPlayer03.swift in Sources */,
-				1F4D29CB1CE266A700C02C6E /* Math11.swift in Sources */,
 				1F4D299F1CE266A700C02C6E /* Colors09.swift in Sources */,
-				1F4D29C11CE266A700C02C6E /* Math01.swift in Sources */,
 				1F4D298F1CE266A700C02C6E /* AudioPlayer01.swift in Sources */,
 				1F4D299B1CE266A700C02C6E /* Colors05.swift in Sources */,
 				1F4D29961CE266A700C02C6E /* AudioPlayer09.swift in Sources */,
-				1F4D298E1CE266A700C02C6E /* Advanced07.swift in Sources */,
 				1F4D29971CE266A700C02C6E /* Colors01.swift in Sources */,
 				1F4D29901CE266A700C02C6E /* AudioPlayer02.swift in Sources */,
-				1F4D29CE1CE266A700C02C6E /* Math14.swift in Sources */,
 				1F4D29D71CE266A700C02C6E /* Movies06.swift in Sources */,
 				1F4D29D11CE266A700C02C6E /* MathComparePaths.swift in Sources */,
 				1F4D29881CE266A700C02C6E /* Advanced01.swift in Sources */,
@@ -621,16 +563,11 @@
 				1F4D29F81CE266A700C02C6E /* Shapes17.swift in Sources */,
 				1F4D28D71CE265EE00C02C6E /* ViewController.swift in Sources */,
 				1F4D2A0A1CE266A700C02C6E /* Views15.swift in Sources */,
-				1F4D29CA1CE266A700C02C6E /* Math10.swift in Sources */,
 				1F4D29A31CE266A700C02C6E /* Fonts03.swift in Sources */,
 				1F4D28D51CE265EE00C02C6E /* AppDelegate.swift in Sources */,
-				1F4D29C51CE266A700C02C6E /* Math05.swift in Sources */,
 				1F4D2A0C1CE266A700C02C6E /* Views17.swift in Sources */,
 				1F4D29BB1CE266A700C02C6E /* Interaction04.swift in Sources */,
 				1F4D29FB1CE266A700C02C6E /* Shapes20.swift in Sources */,
-				1F4D29CF1CE266A700C02C6E /* Math15.swift in Sources */,
-				1F4D29C71CE266A700C02C6E /* Math07.swift in Sources */,
-				1F4D298B1CE266A700C02C6E /* Advanced04.swift in Sources */,
 				1F4D29A01CE266A700C02C6E /* Colors10.swift in Sources */,
 				1F4D29F71CE266A700C02C6E /* Shapes16.swift in Sources */,
 				1F4D29DC1CE266A700C02C6E /* NewMath05.swift in Sources */,
@@ -654,7 +591,6 @@
 				1F4D29A71CE266A700C02C6E /* ImageFilters02.swift in Sources */,
 				1F4D299E1CE266A700C02C6E /* Colors08.swift in Sources */,
 				1F4D2A151CE266A700C02C6E /* Views26.swift in Sources */,
-				1F4D29CC1CE266A700C02C6E /* Math12.swift in Sources */,
 				1F4D29A51CE266A700C02C6E /* Fonts05.swift in Sources */,
 				1F4D29A91CE266A700C02C6E /* ImageFilters04.swift in Sources */,
 				1F4D29F91CE266A700C02C6E /* Shapes18.swift in Sources */,
@@ -666,15 +602,12 @@
 				1F4D29F21CE266A700C02C6E /* Shapes10.swift in Sources */,
 				1F4D29B81CE266A700C02C6E /* Interaction01.swift in Sources */,
 				1F4D29AC1CE266A700C02C6E /* ImageFilters07.swift in Sources */,
-				1F4D29C21CE266A700C02C6E /* Math02.swift in Sources */,
 				1F4D29E61CE266A700C02C6E /* NewMath15.swift in Sources */,
-				1F4D29C91CE266A700C02C6E /* Math09.swift in Sources */,
 				1F4D29EA1CE266A700C02C6E /* Shapes01.swift in Sources */,
 				1F4D29EB1CE266A700C02C6E /* Shapes02.swift in Sources */,
 				1F4D29981CE266A700C02C6E /* Colors02.swift in Sources */,
 				1F4D29D31CE266A700C02C6E /* Movies02.swift in Sources */,
 				1F4D298C1CE266A700C02C6E /* Advanced05.swift in Sources */,
-				1F4D29CD1CE266A700C02C6E /* Math13.swift in Sources */,
 				1F4D29E31CE266A700C02C6E /* NewMath12.swift in Sources */,
 				1F4D29DB1CE266A700C02C6E /* NewMath04.swift in Sources */,
 				1F4D29A11CE266A700C02C6E /* Fonts01.swift in Sources */,
@@ -682,30 +615,25 @@
 				1F4D2A051CE266A700C02C6E /* Views09.swift in Sources */,
 				1F4D29E01CE266A700C02C6E /* NewMath09.swift in Sources */,
 				1F4D29DF1CE266A700C02C6E /* NewMath08.swift in Sources */,
-				1F4D29C31CE266A700C02C6E /* Math03.swift in Sources */,
 				1F4D29921CE266A700C02C6E /* AudioPlayer04.swift in Sources */,
 				1F4D29A21CE266A700C02C6E /* Fonts02.swift in Sources */,
 				1F4D29D51CE266A700C02C6E /* Movies04.swift in Sources */,
 				1F4D29AD1CE266A700C02C6E /* ImageFilters08.swift in Sources */,
 				1F4D29991CE266A700C02C6E /* Colors03.swift in Sources */,
 				1F4D29B91CE266A700C02C6E /* Interaction02.swift in Sources */,
-				1F4D29C61CE266A700C02C6E /* Math06.swift in Sources */,
 				1F4D29D91CE266A700C02C6E /* NewMath02.swift in Sources */,
 				1F4D29FD1CE266A700C02C6E /* Views01.swift in Sources */,
-				1F4D29D01CE266A700C02C6E /* Math16.swift in Sources */,
 				1F4D29B01CE266A700C02C6E /* Images01.swift in Sources */,
 				1F4D299A1CE266A700C02C6E /* Colors04.swift in Sources */,
-				1F4D29C81CE266A700C02C6E /* Math08.swift in Sources */,
 				1F4D29AF1CE266A700C02C6E /* ImageFilters10.swift in Sources */,
 				1F4D29FE1CE266A700C02C6E /* Views02.swift in Sources */,
 				1F4D29AE1CE266A700C02C6E /* ImageFilters09.swift in Sources */,
 				1F4D29DE1CE266A700C02C6E /* NewMath07.swift in Sources */,
+				1FEA7BA41CE5B00E0048221B /* Advanced06.swift in Sources */,
 				1F4D29F31CE266A700C02C6E /* Shapes11.swift in Sources */,
 				1F4D29E21CE266A700C02C6E /* NewMath11.swift in Sources */,
 				1F4D2A001CE266A700C02C6E /* Views04.swift in Sources */,
 				1F4D29DA1CE266A700C02C6E /* NewMath03.swift in Sources */,
-				1F4D298D1CE266A700C02C6E /* Advanced06.swift in Sources */,
-				1F4D29C41CE266A700C02C6E /* Math04.swift in Sources */,
 				1F4D29B61CE266A700C02C6E /* Images07.swift in Sources */,
 				1F4D29D81CE266A700C02C6E /* NewMath01.swift in Sources */,
 				1F4D29AA1CE266A700C02C6E /* ImageFilters05.swift in Sources */,

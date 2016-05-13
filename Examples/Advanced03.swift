@@ -10,41 +10,38 @@ import C4
 import UIKit
 
 class Advanced03: CanvasController {
-    
     var shapes = [Shape]()
-    
     override func setup() {
+        for i in 0..<25 {
+            let s = Rectangle(frame: Rect(0,0,self.canvas.height,16))
+            s.opacity = Double(i + 10)/40
+            s.lineWidth = 0.0
 
-
-        for i in 0..<100 {
-            let s = Rectangle(frame: Rect(0,0,self.canvas.height,20))
-            s.fillColor = Color(UIColor(white: 0.0, alpha:CGFloat(Double(i)/40.0)))
-            s.strokeColor = Color(UIColor.clearColor())
-            s.anchorPoint = Point(0.5,8.0+Double(i))
-            var p = self.canvas.center
-            p.y += self.canvas.height/2
-            s.center = p
+            s.anchorPoint = Point(0.5,Double(i))
+            s.center = canvas.center
             shapes.append(s)
             canvas.add(s)
         }
-        wait(0.1) {
-            self.setupAnimations()
+
+        wait(1.0) {
+            self.initiateAnimations()
         }
     }
-    
-    func setupAnimations() {
+
+    func rotate(shape: Shape, duration: Double) {
+        let a = ViewAnimation(duration: duration) {
+            shape.rotation += M_PI
+        }
+        a.addCompletionObserver {
+            self.rotate(shape, duration: duration)
+        }
+        a.animate()
+    }
+
+    func initiateAnimations() {
         for i in 0..<shapes.count {
-    
-
             let s = shapes[i]
-            let a = ViewAnimation(duration: Double(i)*0.01 + 1) {
-                s.transform.rotate(M_PI_2)
-            }
-            a.repeats = true
-            a.animate()
-    
-
+            rotate(s, duration: Double(i) * 0.05 + 1.0)
         }
     }
 }
-

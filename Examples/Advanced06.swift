@@ -1,73 +1,130 @@
 //
 //  Advanced06.swift
-//  C4Examples
+//  Examples
 //
-//  Created by Oliver Andrews on 2015-09-15.
-//  Copyright © 2015 Slant. All rights reserved.
+//  Created by travis on 2016-05-12.
+//  Copyright © 2016 C4. All rights reserved.
 //
 
 import C4
 import UIKit
 
 class Advanced06: CanvasController {
-    
-    var img:Image!
-    var container = Rectangle()
-    
+    var image = Image()
+    var allRules = [[Bool]]()
+    var label: TextShape!
+    var images: [Image]!
+
     override func setup() {
-        setupShapes()
-        img.backgroundColor = C4Blue
-        img.layer?.mask = container.layer
-        canvas.add(img)
-    }
-    
-    func setupShapes() {
-        img = Image("chop")
-        img.height = self.canvas.height
-        container = Rectangle(frame: Rect(0,0,300, self.canvas.height))
-        container.fillColor = Color(UIColor.clearColor())
-        self.addVisibleContainer()
+        image.frame = canvas.frame
+        canvas.add(image)
 
+        createAllRules()
 
-        img.center = self.canvas.center;
-        container.center = Point(img.width/2 ,img.height/2);
-        for _ in 0..<30 {
-            self.makeStrip()
-    
+        let f = Font(name: "Menlo-Regular", size: 12)!
+        label = TextShape(text: "Automata", font: f)!
+        label.origin = Point(10,10)
+        label.fillColor = C4Blue
+        canvas.add(label)
 
+        wait(1.0) {
+            self.generateNextImage()
         }
     }
-    
-    func makeStrip() {
-        let h = Double(random(min: Int(container.corner.height*2), max: 300)) // the strips need minimum container cornerRadius*2 or possible assertion failure
-        let strip = Rectangle(frame: Rect(0,0,300,h))
-        strip.center = Point(container.width/2 ,container.height/2);
-        strip.opacity = 0.3
-        strip.corner = Size(2,2)
-        container.add(strip)
-        newPlace(strip)
-    }
-    func newPlace(sender: Shape) {
-        let time = random01()*5 + 1.5
-        let a = ViewAnimation(duration:time) {
-            sender.center = Point(sender.center.x, random01()*self.container.height)
-        }
-        a.animate()
-        wait(time) {
-            self.newPlace(sender)
+
+    var i = 0
+    func generateNextImage() {
+        images = [Image]()
+
+        ShapeLayer.disableActions = true
+        label.text = "Automata – \(i+1)/256"
+        label.origin = Point(10,10)
+        if let img = createImage(allRules[i]) {
+            images.append(img)
+            image.contents = img.contents
         }
 
+        i += 1
+        if i < allRules.count {
+            wait(0.033) {
+                self.generateNextImage()
+            }
+        }
+    }
 
+    func name(rules: [Bool]) -> String {
+        var name = ""
+        for rule in rules {
+            name += "\(Int(rule))"
+        }
+        return name
     }
-    
-    func addVisibleContainer() {
-        let visibleContainer = Rectangle(frame: self.container.frame)
-        visibleContainer.center = self.canvas.center
-        visibleContainer.fillColor = Color(UIColor.clearColor())
-        visibleContainer.lineWidth = 2.0
-        visibleContainer.strokeColor = C4Blue
-        self.canvas.add(visibleContainer)
+
+    func createAllRules() {
+        for a in 0...1 {
+            for b in 0...1 {
+                for c in 0...1 {
+                    for d in 0...1{
+                        for e in 0...1 {
+                            for f in 0...1 {
+                                for g in 0...1 {
+                                    for h in 0...1 {
+                                        //rules maps to: [000, 001, 010, 011, 100, 101, 110, 111]
+                                        allRules.append([Bool(a), Bool(b), Bool(c), Bool(d), Bool(e), Bool(f), Bool(g), Bool(h)])
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-    
-    
+
+    func createImage(rules: [Bool]) -> Image? {
+        let w = Int(image.size.width)
+        let h = Int(image.size.height)
+        var map = Array(count: (w*h), repeatedValue:false)
+
+        map[w/2] = true //try adding random true values to the first row
+
+        for row in 1..<h-1 {
+            for col in 1..<w-1 {
+                var result = 0b000000
+                let idx = (row-1) * w + col - 1
+                if map[idx] {
+                    result = result &+ 0b000100
+                }
+                if map[idx+1] {
+                    result = result &+ 0b000010
+                }
+                if map[idx+2] {
+                    result = result &+ 0b000001
+                }
+                map[row*w + col] = rules[result]
+            }
+        }
+
+        var pixels = [Pixel](count: w*h, repeatedValue: Pixel(0, 0, 138, 255))
+        for i in 0..<map.count {
+            if map[i] == true {
+                pixels[i] = Pixel(255, 0, 121, 255)
+            }
+        }
+
+        return Image(pixels: pixels, size: Size(w, h))
+    }
+
+    func save(image: Image, name: String) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        let fileUrl = NSURL(fileURLWithPath: documentsPath).URLByAppendingPathComponent("\(name).png")
+
+        if let filePath = fileUrl.path {
+            do {
+                try UIImagePNGRepresentation(image.uiimage)?.writeToFile(filePath, options: NSDataWritingOptions.AtomicWrite)
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
