@@ -27,19 +27,15 @@ class Shapes01: CanvasController {
         let circle = Circle(center: Point(0, 0), radius: 50) // same dimensions as square //Create a circle (same w & h)
 
         //Figure out the horizontal whitespace (i.e. the space between shapes and the edges of the canvas)
-        var whiteSpace = self.canvas.width - 4 * rectangle.width
-
-        whiteSpace = whiteSpace/5 // because there are 5 gaps
+        let whiteSpace = (canvas.width - 4 * rectangle.width)/5 // divide by 5 because there are 5 gaps
 
         //Create a displacement vector
         let dx = Vector(x: whiteSpace + rectangle.width, y: 0)
 
         //center all the shapes to the canvas
-        var center = Point()
-        center.y = self.canvas.center.y
+        var center = Point(whiteSpace + rectangle.width/2, canvas.center.y)
 
         //set the x position for the rectangle
-        center.x = whiteSpace + rectangle.width/2
         rectangle.center = center
 
         //set the x position for the square

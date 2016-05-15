@@ -21,9 +21,19 @@ import UIKit
 import C4
 
 class ViewController: CanvasController {
+    let s = ScreenRecorder()
+
     override func setup() {
-        let example = Views15()
+        let example = Shapes12()
         self.addChildViewController(example)
         canvas.add(example.canvas)
+
+        s.recordingEndedAction = {
+            self.s.showPreviewInController(self)
+        }
+
+//        wait(3.0) {
+//            self.s.start(5.0)
+//        }
     }
 }

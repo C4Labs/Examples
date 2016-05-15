@@ -21,46 +21,33 @@ import UIKit
 import C4
 
 class Shapes12: CanvasController {
+    var line1, line2: Line!
+
     override func setup() {
-        //first shape will animate the start to the end
-        let dx = Vector(x: canvas.width/4.0, y: 0)
-        let start = createShape(canvas.center - dx, color: C4Blue)
-
-        //second shape will animate the end to the start
-        let end = createShape(canvas.center, color: C4Purple)
-
-        //third shape will animate the start and end to a mid-point
-        let both = createShape(canvas.center + dx, color: C4Pink)
-
-        let a = ViewAnimation(duration:2.0) {
-            start.strokeStart = 1
-        }
-        a.repeats = true
-        a.autoreverses = true
-
-        let b = ViewAnimation(duration:2.0) {
-            end.strokeEnd = 0
-        }
-        b.repeats = true
-        b.autoreverses = true
-
-        let c = ViewAnimation(duration:2.0) {
-            both.strokeStart = 0.5
-            both.strokeEnd = 0.5
-        }
-        c.repeats = true
-        c.autoreverses = true
-
-        let grp = ViewAnimationGroup(animations: [a, b, c])
-        grp.animate()
+        createLines()
+        line1.lineDashPattern = [5, 10]
+        line2.lineDashPattern = [15, 30]
     }
 
-    func createShape(center: Point, color: Color) -> Shape {
-        let shape = Circle(center: center, radius: 50)
-        shape.lineWidth = 30.0
-        shape.strokeColor = color
-        shape.fillColor = clear
-        canvas.add(shape)
-        return shape
+    func createLines() {
+        let dy = Vector(x: 0, y: canvas.height/3)
+
+        //create end points for the first line
+        var linePoints = (Point() + dy, Point(canvas.width, 0) + dy)
+
+        //create the first line
+        line1 = Line(linePoints)
+        line1.lineWidth = 5
+
+        linePoints.0 += dy
+        linePoints.1 += dy
+
+        //create the second line
+        line2 = Line(linePoints)
+        line2.lineWidth = 5
+
+        //add the lines to the canvas
+        canvas.add(line1)
+        canvas.add(line2)
     }
 }

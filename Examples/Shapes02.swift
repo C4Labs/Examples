@@ -51,9 +51,9 @@ class Shapes02: CanvasController {
         randomPolygon.center = polygon.center + dx
 
         //add shapes to canvas
-        self.canvas.add(line)
-        self.canvas.add(triangle)
-        self.canvas.add(polygon)
-        self.canvas.add(randomPolygon)
+        canvas.add(line)
+        canvas.add(triangle)
+        canvas.add(polygon)
+        canvas.add(randomPolygon)
     }
 }

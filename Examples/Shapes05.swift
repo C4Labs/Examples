@@ -18,17 +18,28 @@
 // IN THE SOFTWARE.
 
 import C4
+import UIKit
 
 class Shapes05: CanvasController {
     override func setup() {
-        //create a font (120 is big enough for an iPad, make it smaller for iPod/iPhone)
-        let f = Font(name: "Helvetica", size: 120)!
+        //create a variable rect
+        var f = Rect(0, 0, 200, 200)
 
-        //create a shape using a string and font
-        let textShape = TextShape(text:"C4", font: f)!
-        textShape.center = self.canvas.center
+        //position the frame, create the default shape
+        f.center = Point(canvas.width/3, canvas.center.y)
+        let shape = Ellipse(frame: f)
 
-        //add the shape to the canvas
-        canvas.add(textShape)
+        //position the frame, create the custom shape
+        f.center = Point(canvas.width*2/3, canvas.center.y)
+        let custom = Ellipse(frame: f)
+
+        //you can cast from a UIColor to a C4 Color
+        //set the fill and stroke colors for the custom shape
+        custom.fillColor = green
+        custom.strokeColor = magenta
+
+        //add the shapes to the canvas
+        canvas.add(shape)
+        canvas.add(custom)
     }
 }

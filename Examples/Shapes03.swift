@@ -17,35 +17,47 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import UIKit
 import C4
 
 class Shapes03: CanvasController {
     override func setup() {
-        let dy = Vector(x: 0, y: 2.0)
+        var arcCenter = Point(canvas.width/3.0, canvas.center.y)
+        var wedgeCenter = Point(2.0 * canvas.width/3.0, canvas.center.y)
 
-        //create and array of points to use for lines
-        var points = (Point()-dy, Point(canvas.width, 0.0)-dy)
+        //create the counter-clockwise arc
+        let counterClockwiseArc = Arc(center: arcCenter,
+                                      radius: 100,
+                                      start: 1.125 * M_PI,
+                                      end: 1.875 * M_PI,
+                                      clockwise: false)
 
-        //figure out the total number of lines to draw
-        let totalLineCount = self.canvas.height / 2.0 //default line width of 1.0
+        //create the clockwise arc, first shifting the center of the arc
+        arcCenter.y -= 10
+        let clockwiseArc = Arc(center: arcCenter,
+                               radius: 100,
+                               start: 1.125 * M_PI,
+                               end: 1.875 * M_PI,
+                               clockwise: true)
 
-        //figure out displacement of strokeStart and strokeEnd
-        let strokeDisplacement = 0.5 / totalLineCount
+        //create the counter-clockwise wedge
+        let counterClockwiseWedge = Wedge(center: wedgeCenter,
+                                          radius: 100,
+                                          start: M_PI_4 * 3,
+                                          end: M_PI_4,
+                                          clockwise: false)
 
-        for i in 0..<Int(totalLineCount) {
-            points.0 += dy
-            points.1 += dy
+        //create the clockwise wedge, first shifting the center of the wedge
+        wedgeCenter.y -= 10
+        let clockwiseWedge = Wedge(center: wedgeCenter,
+                                   radius: 100,
+                                   start: M_PI_4 * 3,
+                                   end: M_PI_4,
+                                   clockwise: true)
 
-            //create a new line
-            let newLine = Line(points)
-
-            //determine the current displacement of the ends of the line
-            let ds = strokeDisplacement*Double(i)
-            newLine.strokeStart = 0.5 - ds
-            newLine.strokeEnd = 0.5 + ds
-
-            self.canvas.add(newLine)
-        }
+        //add the shapes to the canvas
+        canvas.add(counterClockwiseArc)    //bottom
+        canvas.add(clockwiseArc)           //top
+        canvas.add(counterClockwiseWedge)  //bottom
+        canvas.add(clockwiseWedge)         //top
     }
 }

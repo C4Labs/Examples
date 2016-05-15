@@ -17,51 +17,75 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
+import UIKit
 import C4
+
 class Shapes07: CanvasController {
-    var poly1: Polygon!
-    var poly2: Polygon!
+    var poly1, poly2, poly3: Polygon!
 
     override func setup() {
-        createPolygons()
+        createAndStylePolygons()
         createLabels()
 
-        //define the fill rules for each polygon
-        poly1.fillRule = .NonZero//Default value
-        poly2.fillRule = .EvenOdd
+        //set the lineJoin property for each shape
+        poly1.lineJoin = .Miter //This is the default value
+        poly2.lineJoin = .Round
+        poly3.lineJoin = .Bevel
     }
 
-    func createPolygons() {
-        let points = [Point(), Point(150, -150), Point(200, -100), Point(100, 0), Point(0, -100), Point(50, -150), Point(200, 0)]
+    func createAndStylePolygons() {
+        //the base width for the polygons
+        let base = 125.0
+        let height = sqrt(3)/4.0 * base // half the height of an equilateral
+        let polyPoints = [Point(), Point(base/2, -height), Point(base, 0)]
 
+        let dx = Vector(x: canvas.width/4, y: 0)
         //create poly1 and style it
-        poly1 = Polygon(points)
-        poly1.fillColor = C4Blue
-        poly1.center = Point(canvas.width/3, canvas.center.y)
+        poly1 = Polygon(polyPoints)
+        poly1.lineWidth = 20.0
+        poly1.center = canvas.center - dx
 
         //create poly2 and style it
-        poly2 = Polygon(points)
-        poly2.fillColor = C4Blue
-        poly2.center = Point(canvas.width*2/3, canvas.center.y)
+        poly2 = Polygon(polyPoints)
+        poly2.strokeColor = C4Blue
+        poly2.lineWidth = 20.0
+        poly2.center = canvas.center
+        poly2.lineJoin = .Round
+
+        //create poly3 and style it
+        poly3 = Polygon(polyPoints)
+        poly3.strokeColor = C4Pink
+        poly3.lineWidth = 20.0
+        poly3.center = canvas.center + dx
 
         //add all the polygons to the canvas
-        self.canvas.add(poly1)
-        self.canvas.add(poly2)
+        canvas.add(poly1)
+        canvas.add(poly2)
+        canvas.add(poly3)
     }
 
     func createLabels() {
-        let f = Font(name: "Helvetica", size: 30)!
+        let f = Font(name: "Helvetica", size:30.0)!
 
-        //create the NonZero label, center it to the base of poly1
-        let lableNormal =  TextShape(text: ".NonZero", font: f)!
-        lableNormal.center = poly1.center
-        lableNormal.center.y += poly1.height/2 + lableNormal.height
-        self.canvas.add(lableNormal)
+        //create the JOINMITER label, center it to the base of poly1
+        var l = TextShape(text: ".Miter", font: f)!
+        var center = poly1.center
+        center.y += poly1.height
+        l.center = center
+        canvas.add(l)
 
-        //create the EvenOdd label, center it to the base of poly2
-        let labelEvenOdd =  TextShape(text: ".EvenOdd", font: f)!
-        labelEvenOdd.center = poly2.center
-        labelEvenOdd.center.y += poly2.height/2 + labelEvenOdd.height
-        self.canvas.add(labelEvenOdd)
+        //create the JOINROUND label, center it to the base of poly2
+        l = TextShape(text: ".Round", font: f)!
+        center = poly2.center
+        center.y += poly2.height
+        l.center = center
+        canvas.add(l)
+
+        //create the JOINBEVEL label, center it to the base of poly3
+        l = TextShape(text: ".Bevel", font: f)!
+        center = poly3.center
+        center.y += poly3.height
+        l.center = center
+        canvas.add(l)
     }
 }
