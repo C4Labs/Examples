@@ -20,31 +20,30 @@
 import UIKit
 import C4
 
-class Shapes14: CanvasController {
+class Shapes13: CanvasController {
     override func setup() {
-        //create the circle and center it
-        let circle = Circle(center: self.canvas.center, radius: 150)
-        circle.lineWidth = 10.0
-        circle.fillColor = Color(UIColor.clearColor())
+        //create the line and center it
+        let points = (Point(0, canvas.center.y), Point(canvas.width, canvas.center.y))
+        let line = Line(points)
+        line.lineWidth = 100.0
+        canvas.add(line)
 
         //create a dash pattern
         var dashPattern = [Double]()
-        let circumference = M_PI * circle.width
-        for i in 1..<Int(circumference) {
+        for i in Int(line.lineWidth)..<Int(canvas.width + line.lineWidth) {
             dashPattern.append(Double(i))
+            dashPattern.append(dashPattern.last!)
         }
+        line.lineDashPattern = dashPattern
 
-        circle.lineDashPattern = dashPattern
-        //add the line to the canvas
-        self.canvas.add(circle)
-        //animate it after a short wait
-        let a = ViewAnimation(duration:180) {
-            circle.strokeColor = C4Pink
+        let a = ViewAnimation(duration:30.0) {
+            line.strokeColor = C4Pink
             //set the final dash phase to the entire width of the pattern
-            circle.lineDashPhase = dashPattern.reduce(0, combine: +)
+            line.lineDashPhase = dashPattern.reduce(0, combine: +)
         }
 
         a.autoreverses = true
+        a.repeats = true
         a.animate()
     }
 }

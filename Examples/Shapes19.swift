@@ -22,20 +22,19 @@ import C4
 
 class Shapes19: CanvasController {
     override func setup() {
-        var points = (Point(), Point(canvas.width, 0))
+        var points = (Point(canvas.width/4, canvas.height/3),
+                      Point(canvas.width*3/4, canvas.height/3))
+        let dy = Vector(x: 0, y: 200)
+        let bezier = Curve(begin: points.0,
+                           control0: points.0 - dy,
+                           control1: points.1 + dy,
+                           end: points.1)
+        canvas.add(bezier)
 
-        var step = 0.0
-        repeat {
-            let width = pow(1.1, step)
-            //shift the line points based on the current line width (with a little gap)
-            let dy = Vector(x: 0, y: width+1)
-            points.0 += dy
-            points.1 += dy
+        points.0.y *= 2.0
+        points.1.y *= 2.0
+        let quad = QuadCurve(begin: points.0, control: canvas.center + dy, end: points.1)
 
-            let newLine = Line(points)
-            newLine.lineWidth = width
-            canvas.add(newLine)
-            step += 1.0
-        } while points.0.y < canvas.height
+        canvas.add(quad)
     }
 }

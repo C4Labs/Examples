@@ -21,29 +21,40 @@ import UIKit
 import C4
 
 class Shapes15: CanvasController {
+
     override func setup() {
-        //create the line and center it
-        let points = (Point(0, canvas.center.y), Point(canvas.width, canvas.center.y))
-        let line = Line(points)
-        line.lineWidth = 100.0
-        canvas.add(line)
+        //create the square and center it
+        var f = Rect(0, 0, 250, 250)
+        f.center = canvas.center
 
-        //create a dash pattern
-        var dashPattern = [Double]()
-        for i in Int(line.lineWidth)..<Int(canvas.width + line.lineWidth) {
-            dashPattern.append(Double(i))
-            dashPattern.append(dashPattern.last!)
-        }
-        line.lineDashPattern = dashPattern
+        let rect = Rectangle(frame: f)
+        rect.lineWidth = 10.0
+        rect.fillColor = clear
+        rect.lineCap = .Round
+        rect.lineDashPattern = [5, 20]
+        canvas.add(rect)
 
-        let a = ViewAnimation(duration:30.0) {    //duration = 5 minutes (60s * 5 = 300);
-            line.strokeColor = C4Pink
+        let star = Star(center: canvas.center, pointCount: 5, innerRadius: 50, outerRadius: 100)
+        //style the text shape and set its dash pattern
+        star.fillColor = clear
+        star.lineWidth = 5.0
+        star.lineDashPattern = [1, 10]
+
+        //add the text shape to the canvas
+        canvas.add(star)
+
+        //animate it after a short wait
+        let anim = ViewAnimation(duration:5.0) {
+            rect.strokeColor = C4Pink
+            star.strokeColor = C4Grey
+
             //set the final dash phase to the entire width of the pattern
-            line.lineDashPhase = dashPattern.reduce(0, combine: +)
+            rect.lineDashPhase = self.canvas.width
+            star.lineDashPhase = self.canvas.width
         }
 
-        a.autoreverses = true
-        a.repeats = true
-        a.animate()
+        anim.autoreverses = true
+        anim.repeats = true
+        anim.animate()
     }
 }

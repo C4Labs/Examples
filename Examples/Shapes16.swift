@@ -17,34 +17,56 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import UIKit
 import C4
-
 class Shapes16: CanvasController {
+    var poly1, poly2: Polygon!
+
     override func setup() {
-        //create the circle and center it
-        let circle = Circle(center: self.canvas.center, radius: 150)
-        circle.lineWidth = 10.0
-        circle.fillColor = Color(UIColor.clearColor())
+        createPolygons()
+        createLabels()
 
-        //create a dash pattern
-        var dashPattern = [Double]()
-        let circumference = M_PI * circle.width
-        for i in 1..<Int(circumference) {
-            dashPattern.append(Double(i))
-        }
+        //define the fill rules for each polygon
+        poly1.fillRule = .NonZero //Default value
+        poly2.fillRule = .EvenOdd
+    }
 
-        circle.lineDashPattern = dashPattern
-        //add the line to the canvas
-        self.canvas.add(circle)
-        //animate it after a short wait
-        let a = ViewAnimation(duration:30) {    //duration = 3 minutes (60s * 3 = 180);
-            circle.strokeColor = C4Pink
-            //set the final dash phase to the entire width of the pattern
-            circle.lineDashPhase = dashPattern.reduce(0, combine: +)
-        }
+    func createPolygons() {
+        let points = [Point(),
+                      Point(150, -150),
+                      Point(200, -100),
+                      Point(100, 0),
+                      Point(0, -100),
+                      Point(50, -150),
+                      Point(200, 0)]
 
-        a.autoreverses = true
-        a.animate()
+        //create poly1 and style it
+        poly1 = Polygon(points)
+        poly1.fillColor = C4Blue
+        poly1.center = Point(canvas.width/3, canvas.center.y)
+
+        //create poly2 and style it
+        poly2 = Polygon(points)
+        poly2.fillColor = C4Blue
+        poly2.center = Point(canvas.width*2/3, canvas.center.y)
+
+        //add all the polygons to the canvas
+        canvas.add(poly1)
+        canvas.add(poly2)
+    }
+
+    func createLabels() {
+        let f = Font(name: "Helvetica", size: 30)!
+
+        //create the NonZero label, center it to the base of poly1
+        let lableNormal =  TextShape(text: ".NonZero", font: f)!
+        lableNormal.center = poly1.center
+        lableNormal.center.y += poly1.height/2 + lableNormal.height
+        canvas.add(lableNormal)
+
+        //create the EvenOdd label, center it to the base of poly2
+        let labelEvenOdd =  TextShape(text: ".EvenOdd", font: f)!
+        labelEvenOdd.center = poly2.center
+        labelEvenOdd.center.y += poly2.height/2 + labelEvenOdd.height
+        canvas.add(labelEvenOdd)
     }
 }
