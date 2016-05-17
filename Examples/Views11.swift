@@ -28,13 +28,23 @@ class Views11: CanvasController {
         canvas.add(img)
 
         let mask = Rectangle(frame: Rect(0, 0, img.height-20, 50))
+        let submask = Rectangle(frame: Rect(0, 0, 50, img.height-20))
+        submask.center = mask.center
+        mask.add(submask)
         mask.center = img.bounds.center
         img.mask = mask
 
-        let a = ViewAnimation(duration: 1.5) {
-            mask.transform.rotate(M_PI)
+        let a = ViewAnimation(duration: 17) {
+            mask.transform.rotate(-M_PI)
+        }
+        let b = ViewAnimation(duration: 23) {
+            submask.transform.rotate(M_PI_2)
         }
         a.repeats = true
+        b.repeats = true
+        b.autoreverses = true
+
         a.animate()
+        b.animate()
     }
 }

@@ -24,7 +24,7 @@ class ViewController: CanvasController {
     let s = ScreenRecorder()
 
     override func setup() {
-        let example = Shapes20()
+        let example = Views18()
         self.addChildViewController(example)
         canvas.add(example.canvas)
 
@@ -32,8 +32,8 @@ class ViewController: CanvasController {
             self.s.showPreviewInController(self)
         }
 
-        wait(3.0) {
-            self.s.start(10.0)
+        wait(1.0) {
+            self.s.start(5.0)
         }
     }
 }

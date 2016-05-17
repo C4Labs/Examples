@@ -22,14 +22,18 @@ import UIKit
 
 class Views14: CanvasController {
     override func setup() {
-        let c = Circle(center: canvas.center, radius: 100)
-        c.shadow.opacity = 0.4
-        c.shadow.radius = 3.0
-        c.shadow.offset = Size(130, 130)
+        let c = Circle(center: canvas.center, radius: 75)
+        c.lineWidth = 15.0
 
-        let s = Star(center: Point(), pointCount: 40, innerRadius: 99, outerRadius: 105)
-        c.shadow.path = s.path
+        let scale = Transform.makeScale(2.0, 2.0)
 
-        self.canvas.add(c)
+        let c2 = Circle(center: c.center, radius: 75)
+        c2.lineWidth = c.lineWidth
+
+        c2.transform = scale
+        c2.center = canvas.center
+
+        canvas.add(c2)
+        canvas.add(c)
     }
 }

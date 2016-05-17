@@ -21,11 +21,26 @@ import C4
 
 class Views07: CanvasController {
     override func setup() {
-        let c = Circle(center: canvas.center, radius: 100)
-        canvas.add(c)
+        canvas.backgroundColor = white
+        let points = [Point(), Point(canvas.center.x, 0), Point(0, canvas.center.y), canvas.center]
+        for p in points {
+            let r = Rectangle(frame: Rect(p, Size(canvas.width/2, canvas.height/2)))
+            if p != points.first && p != points.last {
+                r.fillColor = C4Pink
+            }
+            r.corner = Size()
+            r.lineWidth = 25.0
+            r.addTapGestureRecognizer { locations, center, state in
+                self.temporarilyRemove(r)
+            }
+            canvas.add(r)
+        }
+    }
 
-        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
-            c.center = center
+    func temporarilyRemove(shape: Shape) {
+        shape.removeFromSuperview()
+        wait(1.0) {
+            self.canvas.add(shape)
         }
     }
 }

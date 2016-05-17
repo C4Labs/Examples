@@ -22,11 +22,11 @@ import UIKit
 
 class Views06: CanvasController {
     override func setup() {
-        let circle = Circle(center: self.canvas.center, radius: 120)
-        circle.lineWidth = 100
+        let circle = Circle(center: canvas.center, radius: 150)
         canvas.add(circle)
-        canvas.addTapGestureRecognizer { (center, location, state) -> () in
-            circle.masksToBounds = !circle.masksToBounds
-        }
+
+        let C4 = TextShape(text: "C4")!
+        C4.center = circle.bounds.center
+        circle.add(C4)
     }
 }

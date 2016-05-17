@@ -18,13 +18,15 @@
 // IN THE SOFTWARE.
 
 import C4
+import UIKit
 
 class Views05: CanvasController {
     override func setup() {
-        let c = Circle(center: self.canvas.center, radius: 150)
-        c.lineWidth = 0
-        c.backgroundColor = C4Pink
-        c.border.radius = 25.0
-        canvas.add(c)
+        let circle = Circle(center: self.canvas.center, radius: 120)
+        circle.lineWidth = 100
+        canvas.add(circle)
+        canvas.addTapGestureRecognizer { (center, location, state) -> () in
+            circle.masksToBounds = !circle.masksToBounds
+        }
     }
 }

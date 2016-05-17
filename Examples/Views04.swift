@@ -21,14 +21,14 @@ import C4
 
 class Views04: CanvasController {
     override func setup() {
-        let f = Rect(0, 0, 200, 200)
-        let r = Rectangle(frame: f)
-        canvas.add(r)
-        let e = Ellipse(frame: f)
-        e.fillColor = C4Pink
-        canvas.add(e)
-
-        r.center = canvas.center
-        e.center = r.center
+        var origin = Point()
+        let size = Size(canvas.width/10, canvas.height)
+        let dx = Vector(x: size.width, y: 0)
+        repeat {
+            let r = Rectangle(frame: Rect(origin, size))
+            r.opacity = origin.x/canvas.width
+            canvas.add(r)
+            origin += dx
+        } while origin.x < canvas.width
     }
 }

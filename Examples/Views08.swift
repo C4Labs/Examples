@@ -20,27 +20,18 @@
 import C4
 
 class Views08: CanvasController {
-    override func setup() {
-        canvas.backgroundColor = white
-        let points = [Point(), Point(canvas.center.x, 0), Point(0, canvas.center.y), canvas.center]
-        for p in points {
-            let r = Rectangle(frame: Rect(p, Size(canvas.width/2, canvas.height/2)))
-            if p != points.first && p != points.last {
-                r.fillColor = C4Pink
-            }
-            r.corner = Size()
-            r.lineWidth = 25.0
-            r.addTapGestureRecognizer { locations, center, state in
-                self.remove(r)
-            }
-            canvas.add(r)
-        }
-    }
 
-    func remove(shape: Shape) {
-        shape.removeFromSuperview()
-        wait(1.0) {
-            self.canvas.add(shape)
+    var circles = [Circle]()
+
+    override func setup() {
+        for i in -1...1 {
+            let c = Circle(center: canvas.center + Vector(x: 100, y: 0) * Double(i), radius: 100)
+            c.lineWidth = 25
+            canvas.add(c)
+            circles.append(c)
+            c.addTapGestureRecognizer { locations, center, state in
+                self.canvas.bringToFront(c)
+            }
         }
     }
 }

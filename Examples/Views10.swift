@@ -22,9 +22,19 @@ import C4
 class Views10: CanvasController {
     override func setup() {
         let img = Image("chop")!
+        img.constrainsProportions = true
+        img.height = canvas.height
         img.center = canvas.center
         canvas.add(img)
 
-        img.mask = Circle(center: img.bounds.center, radius: img.height/2)
+        let mask = Rectangle(frame: Rect(0, 0, img.height-20, 50))
+        mask.center = img.bounds.center
+        img.mask = mask
+
+        let a = ViewAnimation(duration: 1.5) {
+            mask.transform.rotate(M_PI)
+        }
+        a.repeats = true
+        a.animate()
     }
 }

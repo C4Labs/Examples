@@ -22,9 +22,9 @@ import C4
 class Views03: CanvasController {
     override func setup() {
         let img = Image("chop")!
-        img.center = self.canvas.center
+        img.center = canvas.center
         img.border.width = 10.0
         img.border.color = C4Pink
-        self.canvas.add(img)
+        canvas.add(img)
     }
 }
