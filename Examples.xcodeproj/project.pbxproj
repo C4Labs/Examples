@@ -343,6 +343,7 @@
 		1F4D28F31CE2669600C02C6E /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				D97A83C81CECD8E100330D6E /* _complete */,
 				1F4D28F71CE266A700C02C6E /* Advanced01.swift */,
 				1F4D28F91CE266A700C02C6E /* Advanced03.swift */,
 				1F4D28FB1CE266A700C02C6E /* Advanced04.swift */,
@@ -388,26 +389,17 @@
 				1F4D28F81CE266A700C02C6E /* Interaction06.swift */,
 				1F4D29751CE266A700C02C6E /* Interaction07.swift */,
 				1F4D292F1CE266A700C02C6E /* Interaction10.swift */,
-				1F4D29401CE266A700C02C6E /* MathComparePaths.swift */,
-				1F4D29471CE266A700C02C6E /* Math01.swift */,
-				1F4D29481CE266A700C02C6E /* Math02.swift */,
-				1F4D29491CE266A700C02C6E /* Math03.swift */,
-				1F4D294A1CE266A700C02C6E /* Math04.swift */,
-				1F4D294B1CE266A700C02C6E /* Math05.swift */,
-				1F4D294C1CE266A700C02C6E /* Math06.swift */,
-				1F4D294D1CE266A700C02C6E /* Math07.swift */,
-				1F4D294E1CE266A700C02C6E /* Math08.swift */,
-				1F4D294F1CE266A700C02C6E /* Math09.swift */,
-				1F4D29501CE266A700C02C6E /* Math10.swift */,
-				1F4D29511CE266A700C02C6E /* Math11.swift */,
-				1F4D29521CE266A700C02C6E /* Math12.swift */,
-				1F4D29531CE266A700C02C6E /* Math13.swift */,
-				1F4D29541CE266A700C02C6E /* Math14.swift */,
-				1F4D29551CE266A700C02C6E /* Math15.swift */,
 				1F4D29411CE266A700C02C6E /* Movies01.swift */,
 				1F4D29421CE266A700C02C6E /* Movies02.swift */,
 				1F4D29441CE266A700C02C6E /* Movies03.swift */,
 				1F4D29461CE266A700C02C6E /* Movies04.swift */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
+		D97A83C81CECD8E100330D6E /* _complete */ = {
+			isa = PBXGroup;
+			children = (
 				1F4D29591CE266A700C02C6E /* Shapes01.swift */,
 				1F4D295A1CE266A700C02C6E /* Shapes02.swift */,
 				1F4D295B1CE266A700C02C6E /* Shapes03.swift */,
@@ -446,8 +438,24 @@
 				D97A83C11CEA89D000330D6E /* Views16.swift */,
 				D97A83C31CEA913C00330D6E /* Views17.swift */,
 				D97A83C51CEA960400330D6E /* Views18.swift */,
+				1F4D29401CE266A700C02C6E /* MathComparePaths.swift */,
+				1F4D29471CE266A700C02C6E /* Math01.swift */,
+				1F4D29481CE266A700C02C6E /* Math02.swift */,
+				1F4D29491CE266A700C02C6E /* Math03.swift */,
+				1F4D294A1CE266A700C02C6E /* Math04.swift */,
+				1F4D294B1CE266A700C02C6E /* Math05.swift */,
+				1F4D294C1CE266A700C02C6E /* Math06.swift */,
+				1F4D294D1CE266A700C02C6E /* Math07.swift */,
+				1F4D294E1CE266A700C02C6E /* Math08.swift */,
+				1F4D294F1CE266A700C02C6E /* Math09.swift */,
+				1F4D29501CE266A700C02C6E /* Math10.swift */,
+				1F4D29511CE266A700C02C6E /* Math11.swift */,
+				1F4D29521CE266A700C02C6E /* Math12.swift */,
+				1F4D29531CE266A700C02C6E /* Math13.swift */,
+				1F4D29541CE266A700C02C6E /* Math14.swift */,
+				1F4D29551CE266A700C02C6E /* Math15.swift */,
 			);
-			name = Examples;
+			name = _complete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

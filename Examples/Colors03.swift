@@ -21,19 +21,16 @@ import C4
 import UIKit
 
 class Colors03: CanvasController {
-    //we use an array of shapes and for() loops to set styles
-    var shapes = [Shape]()
-    var colors = [black, darkGray, lightGray, gray, red, green, blue, cyan, yellow, magenta, orange, purple, brown, white, clear]
-    var labels = ["black", "darkGray", "lightGray", "gray", "red", "green", "blue", "cyan", "yellow", "magenta", "orange", "purple", "brown", "white", "clear"]
 
     override func setup() {
+        //we use an array of shapes and for() loops to set styles
+        let colors = [black, darkGray, lightGray, gray, red, green, blue,
+                      cyan, yellow, magenta, orange, purple, brown, white, clear]
+        let labels = ["black", "darkGray", "lightGray", "gray", "red", "green", "blue",
+                      "cyan", "yellow", "magenta", "orange", "purple", "brown", "white", "clear"]
+
         //create a frame for building each shape
         let frame = Rect(0, 0, self.canvas.width*0.96, self.canvas.height/18.0)
-
-        //create an array of 15 shapes
-        for _ in 0..<15 {
-            shapes.append(Rectangle(frame: frame))
-        }
 
         //create a point that we can update to se the position of each object
         let dy = Vector(x: 0, y: canvas.height/16)
@@ -41,24 +38,30 @@ class Colors03: CanvasController {
 
         let f = Font(name: "Helvetica", size: 16.0)!
         //for every shape, update its linewidth, position and add it to the canvas
-        for i in 0..<shapes.count {
-            let shape = shapes[i]
-            shapes[i].fillColor = colors[i]
-            shape.lineWidth = 0.0
+        for i in 0..<15 {
+            let shape = Rectangle(frame: frame)
+            shape.fillColor = colors[i]
             shape.center = center
-            center += dy
-            self.canvas.add(shape)
+            canvas.add(shape)
 
-            let ts = TextShape(text: labels[i], font: f)!
-            //all labels will be white except the last two
-            ts.fillColor = white
+            let label = TextShape(text: labels[i], font: f)!
 
-            if i >= 13 {
-                ts.fillColor = C4Purple
-                shape.lineWidth = 1.0
+            //all labels will be white except white, clear, yellow, green and cyan
+            switch labels[i] {
+            case "yellow", "green", "cyan":
+                shape.lineWidth = 0.0
+                fallthrough
+            case "white", "clear", "yellow", "green", "cyan":
+                label.fillColor = C4Purple
+            default:
+                label.fillColor = white
+                shape.lineWidth = 0.0
             }
-            ts.center = shape.bounds.center
-            shape.add(ts)
+
+            label.center = shape.bounds.center
+            shape.add(label)
+
+            center += dy
         }
     }
 }
