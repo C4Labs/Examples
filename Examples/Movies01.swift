@@ -23,8 +23,7 @@ class Movies01: CanvasController {
     override func setup() {
         //create a movie and play it automatically
         let movie = Movie("halo.mp4")!
-        movie.height = canvas.height
-        movie.center = canvas.center
+        movie.width = canvas.width
         movie.play()
         canvas.add(movie)
 

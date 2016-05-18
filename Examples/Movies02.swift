@@ -21,11 +21,39 @@ import C4
 
 class Movies02: CanvasController {
     override func setup() {
-        //create a movie and play it automatically
-        let movie = Movie("halo.mp4")!
-        movie.frame = Rect(0, 0, 300, 300)
-        movie.center = canvas.center
-        movie.play()
-        canvas.add(movie)
+        let normal = Movie("halo.mp4")!
+        normal.height = 240
+        normal.center = canvas.center
+
+        let tall = Movie("halo.mp4")!
+        tall.frame = normal.frame
+        tall.constrainsProportions = false
+        tall.height = canvas.height
+        tall.center = canvas.center
+
+        let wide = Movie("halo.mp4")!
+        wide.frame = normal.frame
+        wide.constrainsProportions = false
+        wide.width = canvas.width
+        wide.center = canvas.center
+
+        let full = Movie("halo.mp4")!
+        full.frame = canvas.frame
+
+        let movies = [normal, tall, wide, full]
+        for mov in movies {
+            mov.opacity = 0.66
+            mov.border.color = white
+            mov.border.width = 0.5
+            mov.muted = true
+            mov.loops = true
+            mov.play()
+        }
+        normal.muted = false
+
+        canvas.add(full)
+        canvas.add(tall)
+        canvas.add(wide)
+        canvas.add(normal)
     }
 }

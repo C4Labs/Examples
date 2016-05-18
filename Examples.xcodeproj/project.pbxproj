@@ -377,10 +377,6 @@
 				1F4D28F81CE266A700C02C6E /* Interaction06.swift */,
 				1F4D29751CE266A700C02C6E /* Interaction07.swift */,
 				1F4D292F1CE266A700C02C6E /* Interaction10.swift */,
-				1F4D29411CE266A700C02C6E /* Movies01.swift */,
-				1F4D29421CE266A700C02C6E /* Movies02.swift */,
-				1F4D29441CE266A700C02C6E /* Movies03.swift */,
-				1F4D29461CE266A700C02C6E /* Movies04.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -388,6 +384,10 @@
 		D97A83C81CECD8E100330D6E /* _complete */ = {
 			isa = PBXGroup;
 			children = (
+				1F4D29411CE266A700C02C6E /* Movies01.swift */,
+				1F4D29421CE266A700C02C6E /* Movies02.swift */,
+				1F4D29441CE266A700C02C6E /* Movies03.swift */,
+				1F4D29461CE266A700C02C6E /* Movies04.swift */,
 				1F4D291F1CE266A700C02C6E /* Images01.swift */,
 				1F4D29201CE266A700C02C6E /* Images02.swift */,
 				1F4D29231CE266A700C02C6E /* Images03.swift */,
