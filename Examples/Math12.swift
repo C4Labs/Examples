@@ -21,26 +21,21 @@ import C4
 import UIKit
 
 class Math12: CanvasController {
-    var mainPoints = [Point]()
-    var modifiedPoints = [Point]()
-    var insetFrame = Rect()
     override func setup() {
-        let margin = canvas.frame.size.height * 0.1
-        insetFrame = inset(canvas.frame, dx: margin, dy: margin)
-        createPoints()
-        let path = MathComparePaths(frame: canvas.frame, insetFrame: insetFrame, points: mainPoints, modifiedPoints: modifiedPoints)
-        canvas.add(path)
-    }
-
-    func createPoints() {
+    let example = MathComparePaths(frame: canvas.frame) {
+        var points = [Point]()
+        var modifiedPoints = [Point]()
         var x = 0.0
         repeat {
             var y = sin(x * 2 * M_PI)
             let mappedY = min(y, 0.5) * -1
             y *= -1.0
             modifiedPoints.append(Point(x, mappedY))
-            mainPoints.append(Point(x, y))
+            points.append(Point(x, y))
             x += 0.001
         } while x < 1
+        return (points, modifiedPoints)
+    }
+    canvas.add(example)
     }
 }

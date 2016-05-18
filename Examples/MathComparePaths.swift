@@ -35,12 +35,15 @@ class MathComparePaths: View {
     var dIndex = 0.0
     var insetFrame = Rect()
 
-    convenience init(frame: Rect, insetFrame: Rect, points: [Point], modifiedPoints: [Point]) {
+    convenience init(frame: Rect, calculation: () -> ([Point], [Point])) {
         self.init()
+        let margin = frame.size.height * 0.1
         self.frame = frame
-        self.insetFrame = insetFrame
-        self.mainPoints = points
-        self.modifiedPoints = modifiedPoints
+        self.insetFrame = inset(frame, dx: margin, dy: margin)
+
+        let result = calculation()
+        self.mainPoints = result.0
+        self.modifiedPoints = result.1
 
         transformPoints()
         calculateDistances()
@@ -50,10 +53,10 @@ class MathComparePaths: View {
         createGrayPath()
         createButton()
 
-        self.add(gradient)
-        self.add(whitePath)
-        self.add(grayPath)
-        self.add(button)
+        add(gradient)
+        add(whitePath)
+        add(grayPath)
+        add(button)
     }
 
     func transformPoints() {

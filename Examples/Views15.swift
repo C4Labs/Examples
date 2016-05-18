@@ -30,7 +30,7 @@ class Views15: CanvasController {
 
         let c2 = Circle(center: c.center, radius: 75)
         c2.lineWidth = c.lineWidth
-        
+
         c2.transform = translate
 
         canvas.add(c2)

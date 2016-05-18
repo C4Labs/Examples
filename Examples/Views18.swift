@@ -23,7 +23,7 @@ import UIKit
 class Views18: CanvasController {
     override func setup() {
         for i in 0...9 {
-            let t = Triangle([Point(), Point(86,50), Point(0, 100)])
+            let t = Triangle([Point(), Point(86, 50), Point(0, 100)])
             t.anchorPoint = Point(-1.0, 0.5)
             wait(0.25) {
                 t.rotation = 2*M_PI * Double(i)/10

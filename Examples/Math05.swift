@@ -21,19 +21,18 @@ import C4
 import UIKit
 
 class Math05: CanvasController {
-
     var shapes = [Shape]()
-    var columns = 5
-    var rows = 5
 
     override func setup() {
+        let columns = 5
+        let rows = 5
         let dx = canvas.width / Double(columns)
         let dy = canvas.height / Double(rows)
 
         let frame = Rect(0, 0, 50, 16)
         for x in 0..<columns {
             for y in 0..<rows {
-                let shape = Rectangle(frame: frame)//height must be greater than 16 or the cornerRadiusHeight * 2
+                let shape = Rectangle(frame: frame)
                 shape.anchorPoint = Point(0.0, 0.5)
                 shape.interactionEnabled = false
 
@@ -46,10 +45,9 @@ class Math05: CanvasController {
             }
         }
 
-        canvas.addPanGestureRecognizer { (center, location, translation, velocity, state) -> () in
-            for i in 0..<self.shapes.count {
-                let shape = self.shapes[i]
-                let angle = -1 * atan2(location.y-shape.center.y, location.x-shape.center.x)
+        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            for shape in self.shapes {
+                let angle = -1 * atan2(center.y-shape.center.y, center.x-shape.center.x)
                 let transform = Transform.makeRotation(angle)
                 shape.transform = transform
             }

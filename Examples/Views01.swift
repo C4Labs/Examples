@@ -30,7 +30,7 @@ class Views01: CanvasController {
         e.fillColor = C4Pink
         canvas.add(e)
 
-        let t = Triangle([Point(), Point(173,100), Point(0, 200)])
+        let t = Triangle([Point(), Point(173, 100), Point(0, 200)])
         t.fillColor = C4Grey
         canvas.add(t)
 
