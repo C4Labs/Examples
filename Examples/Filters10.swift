@@ -24,10 +24,11 @@ class Filters10: CanvasController {
         let image = Image("chop")!
         image.constrainsProportions = true
         image.width = canvas.width
+        image.center = canvas.center
         canvas.add(image)
 
         var filter = Twirl()
-        filter.center = canvas.center
+        filter.center = Point(0.5, 0.5)
         filter.angle = 2*M_PI
         filter.radius = 200
         image.apply(filter)

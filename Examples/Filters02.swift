@@ -23,7 +23,8 @@ class Filters02: CanvasController {
     override func setup() {
         let image = Image("chop")!
         image.constrainsProportions = true
-        image.width = canvas.width
+        //Bloom reduces the size of the image, so we adjust to fill the canvas
+        image.width = canvas.width + 140
         image.center = canvas.center
         canvas.add(image)
 

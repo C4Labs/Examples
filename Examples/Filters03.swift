@@ -22,7 +22,6 @@ import C4
 class Filters03: CanvasController {
     override func setup() {
         let image = Image(frame: canvas.frame)
-        image.center = canvas.center
         canvas.add(image)
 
         var filter = Checkerboard()
