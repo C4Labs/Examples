@@ -24,7 +24,7 @@ class Audio02: CanvasController {
 
     override func setup() {
         audioPlayer.loops = true
-        pause()
+        pause() //call this to change the bg color!
         canvas.addTapGestureRecognizer { locations, center, state in
             self.audioPlayer.playing ? self.pause() : self.play()
         }
