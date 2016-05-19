@@ -348,6 +348,13 @@
 				1F4D28F91CE266A700C02C6E /* Advanced03.swift */,
 				1F4D28FB1CE266A700C02C6E /* Advanced04.swift */,
 				1FEA7BA31CE5B00E0048221B /* Advanced05.swift */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
+		D97A83C81CECD8E100330D6E /* _complete */ = {
+			isa = PBXGroup;
+			children = (
 				1F4D29751CE266A700C02C6E /* Interaction01.swift */,
 				1F4D29561CE266A700C02C6E /* Interaction02.swift */,
 				1F4D28F81CE266A700C02C6E /* Interaction03.swift */,
@@ -356,13 +363,6 @@
 				1F4D29271CE266A700C02C6E /* Interaction06.swift */,
 				1F4D292A1CE266A700C02C6E /* Interaction07.swift */,
 				1F4D292F1CE266A700C02C6E /* Interaction08.swift */,
-			);
-			name = Examples;
-			sourceTree = "<group>";
-		};
-		D97A83C81CECD8E100330D6E /* _complete */ = {
-			isa = PBXGroup;
-			children = (
 				1F4D29101CE266A700C02C6E /* Fonts01.swift */,
 				1F4D29111CE266A700C02C6E /* Fonts02.swift */,
 				1F4D29121CE266A700C02C6E /* Fonts03.swift */,
