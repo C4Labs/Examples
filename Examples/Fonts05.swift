@@ -25,22 +25,22 @@ class Fonts05: CanvasController {
         let scrollview = UIScrollView(frame: view.frame)
         canvas.add(scrollview)
 
-        //This example is best for iPad / iPad simulator
-        //get all the family names
-        let familyNamesArray = Font.familyNames()
+        //Get all the family names
+        if let familyNamesArray = Font.familyNames() as? [String] {
+            var point = Point(canvas.center.x, 10)
 
-        var point = Point(canvas.center.x, 10)
-
-        //cycle thought all the family names, creating labels for each one
-        for familyName in familyNamesArray {
-            let fontNames = Font.fontNames(familyName as! String) // swiftlint:disable:this force_cast
-            for fontName in fontNames {
-                let f = Font(name: fontName as! String, size: 22.0)! // swiftlint:disable:this force_cast
-                let l = TextShape(text: fontName as! String, font: f)! // swiftlint:disable:this force_cast
-                l.center = point
-                point.y += 30
-                scrollview.add(l)
-                scrollview.contentSize = CGSize(width: 1, height: CGFloat(l.origin.y + l.height))
+            //Cycle through all the family names, creating labels for each one
+            for familyName in familyNamesArray.sort({ $0 < $1 }) {
+                if let fontNames = Font.fontNames(familyName) as? [String] {
+                    for fontName in fontNames.sort({ $0 < $1 }) {
+                        let f = Font(name: fontName, size: 22.0)!
+                        let l = TextShape(text: fontName, font: f)!
+                        l.center = point
+                        point.y += 30
+                        scrollview.add(l)
+                        scrollview.contentSize = CGSize(width: 1, height: CGFloat(l.origin.y + l.height))
+                    }
+                }
             }
         }
     }

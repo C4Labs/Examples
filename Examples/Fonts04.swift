@@ -22,10 +22,10 @@ import C4
 class Fonts04: CanvasController {
     override func setup() {
         //will print to the console ALL the family names of availble fonts
-        let familyNames = Font.familyNames()
-
-        for strings in familyNames {
-            print(strings)
+        if let familyNames = Font.familyNames() as? [String] {
+            for name in familyNames.sort({ $0 < $1 }) {
+                print(name)
+            }
         }
     }
 }
