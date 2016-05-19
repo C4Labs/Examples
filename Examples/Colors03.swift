@@ -60,7 +60,6 @@ class Colors03: CanvasController {
 
             label.center = shape.bounds.center
             shape.add(label)
-
             center += dy
         }
     }
