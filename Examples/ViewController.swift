@@ -24,7 +24,7 @@ class ViewController: CanvasController {
     let s = ScreenRecorder()
 
     override func setup() {
-        let example = Advanced05()
+        let example = Advanced03()
         self.addChildViewController(example)
         canvas.add(example.canvas)
 

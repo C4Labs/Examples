@@ -16,42 +16,95 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
+
 import C4
 import UIKit
 
 class Advanced03: CanvasController {
-    var shapes = [Shape]()
     override func setup() {
-        for i in 0..<25 {
-            let s = Rectangle(frame: Rect(0, 0, self.canvas.height, 16))
-            s.opacity = Double(i + 10)/40
-            s.lineWidth = 0.0
+        //create 3 arrays of shapes
+        var bottom = [Circle]()
+        var middle = [Circle]()
+        var top = [Circle]()
 
-            s.anchorPoint = Point(0.5, Double(i))
-            s.center = canvas.center
-            shapes.append(s)
-            canvas.add(s)
+        //generate 40 "cells"
+        for _ in 1...40 {
+            //calculate the smallest radius of the current cell
+            let r = Double(random(min: 8, max: 16))
+
+            //create 3 layers for the cell
+            bottom.append(Circle(center: canvas.center, radius: r * 2))
+            middle.append(Circle(center: canvas.center, radius: r * 1.5))
+            top.append(Circle(center: canvas.center, radius: r))
         }
 
+        //style the bottom layer of each cell
+        for c in bottom {
+            c.lineWidth = 0
+            c.fillColor = C4Pink
+            canvas.add(c)
+        }
+
+        //style the middle layers of each cell
+        for c in middle {
+            c.lineWidth = 0
+            canvas.add(c)
+        }
+
+        //style the top layer of each cell
+        for c in top {
+            c.lineWidth = 0
+            c.fillColor = C4Purple
+            canvas.add(c)
+        }
+
+        //wait a little bit to get going...
         wait(1.0) {
-            self.initiateAnimations()
+            for i in 0..<bottom.count {
+                self.move((bottom[i], middle[i], top[i]))
+            }
         }
     }
 
-    func rotate(shape: Shape, duration: Double) {
-        let a = ViewAnimation(duration: duration) {
-            shape.rotation += M_PI
-        }
-        a.addCompletionObserver {
-            self.rotate(shape, duration: duration)
-        }
-        a.animate()
-    }
+    //a cell is made up of 3 shapes, so move the all!
+    func move(shapes: (Circle, Circle, Circle)) {
+        //create a random duration, between 1 and 4 seconds
+        let d = random01()*3 + 1
+        //create a random radius for the length of movement
+        let r = (180 - shapes.0.width/2) * random01()
+        //create a random angle
+        let 𝝧 = random01() * 2 * M_PI
+        //generate a target point using polar coordinates, centered on the canvas
+        let point = Point(r * cos(𝝧), r * sin(𝝧)) + Vector(canvas.center)
 
-    func initiateAnimations() {
-        for i in 0..<shapes.count {
-            let s = shapes[i]
-            rotate(s, duration: Double(i) * 0.05 + 1.0)
+        //create animation for the bottom part of the cell
+        let b = ViewAnimation(duration: d) {
+            shapes.0.center = point
         }
+        //offset this animation by 1/20th of a second
+        b.delay = 0.05
+        //when the bottom has finished moving...
+        b.addCompletionObserver {
+            //wait for a random amount of time, up to 1 second
+            wait(random01()) {
+                //move everything again
+                self.move(shapes)
+            }
+        }
+        //create animation for the middle part of the cell
+        let m = ViewAnimation(duration: d) {
+            shapes.1.center = point
+        }
+        //offset this animation by 1/40th of a second
+        m.delay = 0.025
+
+        //create animation for the top part of the cell
+        let t = ViewAnimation(duration: d) {
+            shapes.2.center = point
+        }
+
+        //trigger all the animations
+        let group = ViewAnimationGroup(animations: [b, m, t])
+        group.animate()
     }
 }

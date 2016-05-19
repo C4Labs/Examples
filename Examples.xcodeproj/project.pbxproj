@@ -14,8 +14,8 @@
 		1F4D28DF1CE265EE00C02C6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4D28DD1CE265EE00C02C6E /* LaunchScreen.storyboard */; };
 		1F4D29881CE266A700C02C6E /* Advanced01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F71CE266A700C02C6E /* Advanced01.swift */; };
 		1F4D29891CE266A700C02C6E /* Interaction03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F81CE266A700C02C6E /* Interaction03.swift */; };
-		1F4D298A1CE266A700C02C6E /* Advanced03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F91CE266A700C02C6E /* Advanced03.swift */; };
-		1F4D298C1CE266A700C02C6E /* Advanced04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FB1CE266A700C02C6E /* Advanced04.swift */; };
+		1F4D298A1CE266A700C02C6E /* Advanced02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28F91CE266A700C02C6E /* Advanced02.swift */; };
+		1F4D298C1CE266A700C02C6E /* Advanced03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FB1CE266A700C02C6E /* Advanced03.swift */; };
 		1F4D298F1CE266A700C02C6E /* Audio01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FE1CE266A700C02C6E /* Audio01.swift */; };
 		1F4D29901CE266A700C02C6E /* Audio02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D28FF1CE266A700C02C6E /* Audio02.swift */; };
 		1F4D29911CE266A700C02C6E /* Audio03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D29001CE266A700C02C6E /* Audio03.swift */; };
@@ -110,7 +110,7 @@
 		1F5482D41CE91F53009E841D /* Shapes16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5482D31CE91F53009E841D /* Shapes16.swift */; };
 		1F5482D61CE9286C009E841D /* Shapes10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5482D51CE9286C009E841D /* Shapes10.swift */; };
 		1F5482D81CE99B5F009E841D /* Shapes19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5482D71CE99B5F009E841D /* Shapes19.swift */; };
-		1FEA7BA41CE5B00E0048221B /* Advanced05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7BA31CE5B00E0048221B /* Advanced05.swift */; };
+		1FEA7BA41CE5B00E0048221B /* Advanced04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7BA31CE5B00E0048221B /* Advanced04.swift */; };
 		D97A83BC1CEA745100330D6E /* Views06.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A83BB1CEA745100330D6E /* Views06.swift */; };
 		D97A83BE1CEA856A00330D6E /* Views14.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A83BD1CEA856A00330D6E /* Views14.swift */; };
 		D97A83C01CEA886000330D6E /* Views15.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A83BF1CEA886000330D6E /* Views15.swift */; };
@@ -178,8 +178,8 @@
 		1F4D28E61CE2663700C02C6E /* C4iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = C4iOS.xcodeproj; path = ../../C4iOS/C4iOS.xcodeproj; sourceTree = "<group>"; };
 		1F4D28F71CE266A700C02C6E /* Advanced01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced01.swift; sourceTree = "<group>"; };
 		1F4D28F81CE266A700C02C6E /* Interaction03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction03.swift; sourceTree = "<group>"; };
-		1F4D28F91CE266A700C02C6E /* Advanced03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced03.swift; sourceTree = "<group>"; };
-		1F4D28FB1CE266A700C02C6E /* Advanced04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced04.swift; sourceTree = "<group>"; };
+		1F4D28F91CE266A700C02C6E /* Advanced02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced02.swift; sourceTree = "<group>"; };
+		1F4D28FB1CE266A700C02C6E /* Advanced03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced03.swift; sourceTree = "<group>"; };
 		1F4D28FE1CE266A700C02C6E /* Audio01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio01.swift; sourceTree = "<group>"; };
 		1F4D28FF1CE266A700C02C6E /* Audio02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio02.swift; sourceTree = "<group>"; };
 		1F4D29001CE266A700C02C6E /* Audio03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio03.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		1F5482D31CE91F53009E841D /* Shapes16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes16.swift; sourceTree = "<group>"; };
 		1F5482D51CE9286C009E841D /* Shapes10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes10.swift; sourceTree = "<group>"; };
 		1F5482D71CE99B5F009E841D /* Shapes19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes19.swift; sourceTree = "<group>"; };
-		1FEA7BA31CE5B00E0048221B /* Advanced05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced05.swift; sourceTree = "<group>"; };
+		1FEA7BA31CE5B00E0048221B /* Advanced04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advanced04.swift; sourceTree = "<group>"; };
 		D97A83BB1CEA745100330D6E /* Views06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views06.swift; sourceTree = "<group>"; };
 		D97A83BD1CEA856A00330D6E /* Views14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views14.swift; sourceTree = "<group>"; };
 		D97A83BF1CEA886000330D6E /* Views15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views15.swift; sourceTree = "<group>"; };
@@ -344,10 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				D97A83C81CECD8E100330D6E /* _complete */,
-				1F4D28F71CE266A700C02C6E /* Advanced01.swift */,
-				1F4D28F91CE266A700C02C6E /* Advanced03.swift */,
-				1F4D28FB1CE266A700C02C6E /* Advanced04.swift */,
-				1FEA7BA31CE5B00E0048221B /* Advanced05.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -355,6 +351,10 @@
 		D97A83C81CECD8E100330D6E /* _complete */ = {
 			isa = PBXGroup;
 			children = (
+				1F4D28F71CE266A700C02C6E /* Advanced01.swift */,
+				1F4D28F91CE266A700C02C6E /* Advanced02.swift */,
+				1F4D28FB1CE266A700C02C6E /* Advanced03.swift */,
+				1FEA7BA31CE5B00E0048221B /* Advanced04.swift */,
 				1F4D29751CE266A700C02C6E /* Interaction01.swift */,
 				1F4D29561CE266A700C02C6E /* Interaction02.swift */,
 				1F4D28F81CE266A700C02C6E /* Interaction03.swift */,
@@ -629,7 +629,7 @@
 				1F4D2A2D1CE3378700C02C6E /* Views12.swift in Sources */,
 				D97A83C01CEA886000330D6E /* Views15.swift in Sources */,
 				1F4D29C01CE266A700C02C6E /* Interaction08.swift in Sources */,
-				1F4D298A1CE266A700C02C6E /* Advanced03.swift in Sources */,
+				1F4D298A1CE266A700C02C6E /* Advanced02.swift in Sources */,
 				1F4D29D21CE266A700C02C6E /* Movies01.swift in Sources */,
 				1F4D29DD1CE266A700C02C6E /* Math06.swift in Sources */,
 				1F4D29BA1CE266A700C02C6E /* Interaction04.swift in Sources */,
@@ -657,7 +657,7 @@
 				1F4D29EB1CE266A700C02C6E /* Shapes02.swift in Sources */,
 				1F4D29981CE266A700C02C6E /* Colors02.swift in Sources */,
 				1F4D29D31CE266A700C02C6E /* Movies02.swift in Sources */,
-				1F4D298C1CE266A700C02C6E /* Advanced04.swift in Sources */,
+				1F4D298C1CE266A700C02C6E /* Advanced03.swift in Sources */,
 				1F4D29E31CE266A700C02C6E /* Math12.swift in Sources */,
 				1F4D29DB1CE266A700C02C6E /* Math04.swift in Sources */,
 				1F4D29A11CE266A700C02C6E /* Fonts01.swift in Sources */,
@@ -678,7 +678,7 @@
 				1F4D29AF1CE266A700C02C6E /* Filters10.swift in Sources */,
 				1F4D29AE1CE266A700C02C6E /* Filters09.swift in Sources */,
 				1F4D29DE1CE266A700C02C6E /* Math07.swift in Sources */,
-				1FEA7BA41CE5B00E0048221B /* Advanced05.swift in Sources */,
+				1FEA7BA41CE5B00E0048221B /* Advanced04.swift in Sources */,
 				1F4D29F31CE266A700C02C6E /* Shapes07.swift in Sources */,
 				1F4D29E21CE266A700C02C6E /* Math11.swift in Sources */,
 				1F4D2A001CE266A700C02C6E /* Views01.swift in Sources */,

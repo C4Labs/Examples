@@ -25,6 +25,7 @@ class Advanced01: CanvasController {
     var canvasShapeCount = 0
 
     override func setup() {
+        //set up initial points
         pts = (canvas.center, canvas.center)
         createArc()
     }
@@ -33,12 +34,15 @@ class Advanced01: CanvasController {
         pts.0 = pts.1
         pts.1 = Point(random01()*self.canvas.width, self.canvas.center.y)
 
+        //figure out if the shape should draw upwards or downwards
         let up = canvasShapeCount % 2 == 0 ? true : false
-        let arc = self.arcBetween(pts, upwards: up)
 
+        //create an arc
+        let arc = self.arcBetween(pts, upwards: up)
         canvas.add(arc)
         canvasShapeCount += 1
 
+        //animate the arc to appear
         let a = ViewAnimation(duration:1.0) {
             if arc.strokeStart == 1.0 {
                 arc.strokeStart = 0.0
@@ -46,16 +50,19 @@ class Advanced01: CanvasController {
                 arc.strokeEnd = 1.0
             }
         }
-
+        //create another arc when the animation completes
         a.addCompletionObserver {
             self.createArc()
         }
         a.animate()
-   }
+    }
 
     func arcBetween(points: (Point, Point), upwards: Bool) -> Arc {
+        //we want to create and style without triggering an animation
         ShapeLayer.disableActions = true
 
+        //create the arc
+        //set the start/end angles based on whether it is up or down
         let s = Arc(center: lerp(points.0, points.1, at: 0.5),
                     radius: distance(points.0, rhs: points.1)/2,
                     start: upwards ? M_PI : 0,
@@ -63,6 +70,9 @@ class Advanced01: CanvasController {
                     clockwise: true)
         s.fillColor = clear
 
+        //set the stroke end/start points
+        //depending on drawing left || right
+        //depending on drawing up || down
         if points.1.x > points.0.x {
             if upwards {
                 s.strokeEnd = 0.0
@@ -77,6 +87,7 @@ class Advanced01: CanvasController {
             }
         }
 
+        //color it pink if it's drawing upwards
         if upwards {
             s.strokeColor = C4Pink
         }
