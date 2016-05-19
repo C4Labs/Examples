@@ -20,24 +20,17 @@
 import C4
 
 class Interaction03: CanvasController {
-
     override func setup() {
-        let c = Circle(center: canvas.center, radius: canvas.height/3)
-        c.lineWidth = 40.0
-        c.addLongPressGestureRecognizer { locations, center, state in
-            switch state {
-            case .Began, .Changed:
-                self.randomColor(c)
-            default:
-                c.fillColor = C4Blue
-                c.strokeColor = C4Purple
+        let line = Line((Point(), Point()))
+        line.endPoints.0 = canvas.center
+        line.lineWidth = 40.0
+        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            line.endPoints.1 = center
+            if state == .Began {
+                self.canvas.add(line)
+            } else if state == .Ended {
+                self.canvas.remove(line)
             }
         }
-        canvas.add(c)
-    }
-
-    func randomColor(shape: Shape) {
-        shape.fillColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
-        shape.strokeColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
     }
 }

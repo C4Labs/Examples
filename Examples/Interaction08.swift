@@ -20,7 +20,7 @@
 import C4
 import UIKit
 
-class Interaction10: CanvasController {
+class Interaction08: CanvasController {
     override func setup() {
         let r = Rectangle(frame: canvas.frame)
         r.corner = Size()

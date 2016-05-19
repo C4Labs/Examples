@@ -18,25 +18,18 @@
 // IN THE SOFTWARE.
 
 import C4
+import UIKit
 
 class Interaction02: CanvasController {
-
     override func setup() {
+        let shape = Rectangle(frame: Rect(0, 0, 240, 80))
+        shape.lineWidth = 40.0
+        canvas.add(shape)
 
-        let dx = Vector(x: canvas.width/4, y: 0)
-
-        for i in -1...1 {
-            let c = Circle(center: canvas.center + (dx * Double(i)), radius: canvas.height/6)
-            c.lineWidth = 40.0
-            c.addTapGestureRecognizer { locations, center, state in
-                self.randomColor(c)
-            }
-            canvas.add(c)
+        canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
+            ShapeLayer.disableActions = true
+            shape.rotation = (self.canvas.center.x - center.x) / self.canvas.center.x * 2*M_PI
+            shape.center = center
         }
-    }
-
-    func randomColor(shape: Shape) {
-        shape.fillColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
-        shape.strokeColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
     }
 }

@@ -20,40 +20,20 @@
 import C4
 
 class Interaction04: CanvasController {
-
     override func setup() {
-        let dx = Vector(x: 100, y: 0)
-        let dy = Vector(x: 0, y: 100)
-
-        let c = canvas.center
-
-        let defaultPoints: [Point] = [
-            ((c - dx) - dy),
-            c - dy,
-            (c + dx) - dy,
-            c + dx,
-            (c + dx) + dy,
-            c + dy,
-            (c - dx) + dy,
-            c - dx]
-
-        var polyPoints = defaultPoints
-
-        let poly = Polygon(polyPoints)
-        poly.interactionEnabled = false
-        poly.close()
-        poly.lineWidth = 40.0
-        canvas.add(poly)
-
-        let pan = canvas.addPanGestureRecognizer { locations, center, translation, velocity, state in
-            polyPoints = defaultPoints
-            for i in 0..<locations.count {
-                polyPoints[i * 2] = locations[i]
+        let c = Circle(center: canvas.center, radius: canvas.height/3)
+        c.lineWidth = 40.0
+        let press = c.addLongPressGestureRecognizer { locations, center, state in
+            switch state {
+            case .Began, .Changed:
+                c.fillColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
+                c.strokeColor = Color(red: random01(), green: random01(), blue: random01(), alpha: 1.0)
+            default:
+                c.fillColor = C4Blue
+                c.strokeColor = C4Purple
             }
-            poly.points = polyPoints
-            poly.close()
         }
-
-        pan.maximumNumberOfTouches = 4
+        press.minimumPressDuration = 0.0
+        canvas.add(c)
     }
 }

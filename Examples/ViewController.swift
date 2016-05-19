@@ -24,7 +24,7 @@ class ViewController: CanvasController {
     let s = ScreenRecorder()
 
     override func setup() {
-        let example = Fonts05()
+        let example = Interaction04()
         self.addChildViewController(example)
         canvas.add(example.canvas)
 
@@ -33,7 +33,7 @@ class ViewController: CanvasController {
         }
 
 //        wait(1.0) {
-//            self.s.start(5.0)
+//            self.s.start(15.0)
 //        }
     }
 }
