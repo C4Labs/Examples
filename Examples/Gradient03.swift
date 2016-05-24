@@ -17,23 +17,13 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import UIKit
 import C4
 
-class ViewController: CanvasController {
-    let s = ScreenRecorder()
-
+class Gradient03: CanvasController {
     override func setup() {
-        let example = Gradient04()
-        self.addChildViewController(example)
-        canvas.add(example.canvas)
-
-        s.recordingEndedAction = {
-            self.s.showPreviewInController(self)
-        }
-
-//        wait(1.0) {
-//            self.s.start(15.0)
-//        }
+        let g = Gradient(frame: canvas.frame)
+        g.colors = [C4Blue, C4Grey, C4Pink, C4Purple]
+        g.locations = [0, 0.33, 0.66, 1.0]
+        canvas.add(g)
     }
 }

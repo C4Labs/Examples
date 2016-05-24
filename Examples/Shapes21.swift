@@ -20,20 +20,25 @@
 import UIKit
 import C4
 
-class ViewController: CanvasController {
-    let s = ScreenRecorder()
-
+class Shapes21: CanvasController {
     override func setup() {
-        let example = Gradient04()
-        self.addChildViewController(example)
-        canvas.add(example.canvas)
+        let dx = Vector(x: canvas.width/4, y: 0)
 
-        s.recordingEndedAction = {
-            self.s.showPreviewInController(self)
-        }
+        let f = Rect(0, 0, 120, 120)
 
-//        wait(1.0) {
-//            self.s.start(15.0)
-//        }
+        let r1 = Rectangle(frame: f)
+        r1.corner = Size()
+        r1.center = canvas.center - dx
+
+        let r2 = Rectangle(frame: f)
+        r2.center = canvas.center
+
+        let r3 = Rectangle(frame: f)
+        r3.corner = Size(30, 30)
+        r3.center = canvas.center + dx
+
+        canvas.add(r1)
+        canvas.add(r2)
+        canvas.add(r3)
     }
 }
